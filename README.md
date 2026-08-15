@@ -1,39 +1,41 @@
 # watteuropa.org – Nationalfreie Tage 2026 (NFT 2026)
 
-Offizielle, moderne Web-Landingpage für das europäische Kunst- und Gesellschaftsprojekt **WATT** von **Josef Tieber** anlässlich der **3. Nationalfreien Tage (1. bis 3. Juni 2026)**.
+[![CI/CD Pipeline - Test, Lint & Deploy](https://github.com/niStee/watteuropa-web/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/niStee/watteuropa-web/actions/workflows/ci-cd.yml)
+[![OpenSSF Scorecard Supply-Chain Security](https://github.com/niStee/watteuropa-web/actions/workflows/scorecard.yml/badge.svg)](https://github.com/niStee/watteuropa-web/actions/workflows/scorecard.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![i18n Coverage](https://img.shields.io/badge/i18n%20Coverage-100%25%20(DE%20%7C%20EN%20%7C%20FR%20%7C%20NL%20%7C%20CZ)-success.svg)](tests/i18n.test.ts)
+
+Offizielle, moderne Web-Landingpage und interaktiver Slogan-Generator für das europäische Kunst- und Gesellschaftsprojekt **WATT** von **Josef Tieber (Ing. HTL)** anlässlich der **3. Nationalfreien Tage (1. bis 3. Juni 2026)**.
 
 ---
 
-## 🌟 Projekt-Highlights & Features
+## 🌟 Projekt-Highlights & Module
 
-1. **Hero & Mission**:
-   - Prominente Präsentation der *3. Nationalfreien Tage 2026 (NFT 2026)*.
-   - Europäischer Gruß: *«Runter mit den nationalen Eitelkeiten und Respekt, Respekt, Respekt vor dir!»*
-   - Ziel: Ausbruch aus nationalen Heiligkeitsblasen für mehr europäische und weltweite Gemeinschaftlichkeit.
+### 1. 🌐 Landing Page (`index.html`)
+- **Hero & Mission**: Prominente Präsentation der *Nationalfreien Tage 2026 (NFT 2026)* mit dynamischem Sprach-Inlet.
+- **5 Sprach-Inlets (DE, EN, FR, NL, CZ)**:
+  - Kreisrunde Exponat-Grafiken (*201 DE 3, 201 EN 3, 201 FR 3, 201 NL 3, 201 CZ 4*).
+  - Interaktive Lightbox mit hochauflösender Detailansicht und Übersetzungen.
+  - Direkte Download-Buttons für druckfertige A4-PDF-Vorlagen.
+- **4 Offizielle Video-Dokumentationen (YouTube)**:
+  - **Tag 1: Political Evolution** (`bjQgVwqIg44`)
+  - **Tag 2: Schengen² & Netze** (`dTHp3CdKcmM`)
+  - **Tag 3: Abschlusskundgebung Wegberg** (`A7CWUPn2YEY` • *Standard aktiv*)
+  - **TV-Version (Framebuilder Media Edit • 2:30 min)** (`wrHgyR6Z_-I`)
+  - **Interaktive Speech Transcripts**: Vollständig synchronisiert in allen 5 Sprachen mit anspringbaren Zeitmarken.
+- **Kinetische Skulptur (*HER2a*) & Historische Exponate**: Erklärung der 28 rotierenden Nationalstaaten um den Erdmittelpunkt (Völkerrecht & Europarecht).
+- **Ausblick Prag 2027**: Vorankündigung der 4. Ausgabe (*Dny Bez Národnosti*).
+- **Rechtliches Modal**: Vollständiges Impressum (§ 5 DDG, § 18 MStV) und DSGVO-Datenschutzerklärung.
 
-2. **5 Sprach-Inlets (DE, EN, FR, NL, CZ)**:
-   - Kreisrunde Exponat-Grafiken (Exponate 201 DE 3, 201 EN 3, 201 FR 3, 201 NL 3, 201 CZ 4).
-   - Interaktive Lightbox / Popover mit hochauflösender Bildansicht und Übersetzungen.
-   - Direkte Download-Buttons für druckfertige A4-PDF-Vorlagen.
-
-3. **Video-Dokumentation & Multi-Language Untertitel**:
-   - Tab-basierter Video-Player mit datenschutzfreundlichen YouTube-Embeds (`youtube-nocookie.com`):
-     - **Tag 3: Abschlusskundgebung & Demonstration in Wegberg** (`A7CWUPn2YEY`)
-     - **TV-Version (Framebuilder Media Edit • 2:30 min)** (`wrHgyR6Z_-I`)
-     - **Tag 1: Political Evolution** (`bjQgVwqIg44`)
-     - **Tag 2: Schengen² & Netze** (`dTHp3CdKcmM`)
-     - **WATT Archiv-Player**: Lokaler HTML5-Player mit WebVTT-Untertiteln in allen 5 Sprachen (DE, EN, FR, NL, CZ).
-   - **Interaktives Transkript**: Anklickbare Zeitmarken zum synchronisierten Anspringen im Video.
-
-4. **Über WATT & das Kinetische Kunstwerk (HER2a)**:
-   - Kinetische Skulptur *Hohe Europäische Rösser 2a*: 28 Nationalstaaten rotieren um die starre Mittelachse des Erdmittelpunkts (Symbol für Völkerrecht, Europarecht und gemeinsame Menschenwürde).
-   - Historische Exponate: *Political Evolution* (von der Französischen Revolution bis Violett) & *Schengen²* (einheitlicher EU-Grenzschutz).
-
-5. **Ausblick Prag 2027**:
-   - Vorankündigung der 4. Ausgabe in Prag (1.–4. Juni 2027) mit tschechischem Exponat-Inlet (*4. Dny Bez Národnosti*).
-
-6. **Impressum & Kontakt**:
-   - Josef Tieber, Ing. (HTL), Jakob-Hoogen-Str. 68, D-41844 Wegberg.
+### 2. 🎨 Slogan & Circular Inlet Generator (`generator/index.html`)
+- **Vektor- & Canvas-Engine**: Erstellung kreisrunder Badges mit gebogenem Text oben/unten, zentralen Zitaten und Exponatnummern.
+- **Mehrsprachige Presets**: Vorkonfigurierte Slogans für alle 5 Sprachen (DE, EN, FR, NL, CZ).
+- **Farbthemen & Typografie**: WATT Deep Violet, White on Violet, Dark Inverted, Gold/Accent sowie dynamische Schriftarten (Montserrat, Inter, Oswald, Roboto Condensed).
+- **Druck & Export**:
+  - Hochauflösendes PNG (2048x2048 px, **300 DPI druckfertig**).
+  - Vektor-SVG.
+  - A4-Druckbogen (2x2 / 3x2 Raster mit Schnittmarken).
+  - Standalone-ZIP-Pakete für alle Sprachvarianten.
 
 ---
 
@@ -41,93 +43,58 @@ Offizielle, moderne Web-Landingpage für das europäische Kunst- und Gesellschaf
 
 ```
 watteuropa-web/
-├── index.html                  # Semantisches, barrierefreies HTML5
-├── style.css                   # Modernes Vanilla-CSS-Designsystem (Volt/WATT Lila #502379)
-├── main.js                     # Leichtgewichtiges Vanilla JS (Tabs, Modals, Untertitel)
+├── index.html                  # Semantisches, barrierefreies HTML5 (Landingpage)
+├── style.css                   # Modernes Vanilla-CSS-Designsystem (WATT Deep Violet #502379)
+├── main.js                     # Vanilla JS (Sprachwechsler, Video-Tabs, Modals, Transkripte)
+├── generator/                  # Standalone Slogan & Inlet Generator
+│   ├── index.html              # Generator UI
+│   ├── style.css               # Generator Design System
+│   ├── app.js                  # Generator Controller & Event Engine
+│   └── generator-core.js       # Vektor-Mathematik, Presets, SVG/ZIP Exporter
 ├── assets/
-│   ├── img/                    # Logos & Kontakt-Grafiken
+│   ├── img/                    # Logos, Fotos & Kontakt-Grafiken
 │   ├── inlets/                 # 5 hochauflösende & optimierte Inlet-Grafiken (DE, EN, FR, NL, CZ)
 │   ├── pdf/                    # 5 Original A4-Druck-PDFs
-│   ├── subtitles/              # WebVTT (.vtt) & SRT (.srt) in 5 Sprachen
-│   └── videos/                 # MP4-Videomaterial & Poster
+│   └── subtitles/              # WebVTT (.vtt) & SRT (.srt) in 5 Sprachen
 ├── tests/
-│   └── site.test.ts            # Automatisierte Testsuite (Bun Test)
-└── README.md                   # Dokumentation & Deployment-Anleitung
+│   ├── site.test.ts            # Automatisierte Testsuite (Bun Test)
+│   └── i18n.test.ts            # 100% i18n Translation Coverage Linter
+├── .github/
+│   └── workflows/
+│       ├── ci-cd.yml           # CI/CD Test & Automated United Domains FTPS Deploy
+│       └── scorecard.yml       # OpenSSF Scorecard Supply-Chain Security
+├── CONTRIBUTING.md             # Entwicklungs- & Mitwirkungs-Leitfaden
+├── SECURITY.md                 # Sicherheitsrichtlinie & Coordinated Disclosure
+├── DEPLOYMENT.md               # United Domains & DNS Deployment-Handbuch
+└── LICENSE                     # MIT-Lizenz (Code) & Copyright-Hinweis (Kunstwerke)
 ```
 
 ---
 
-## 🧪 Tests & i18n Coverage Linter
+## 🧪 Tests & Quality Gates
 
-Das Projekt verfügt über eine vollständige automatisierte Test- und Linter-Suite:
+Das Projekt verwendet [Bun](https://bun.sh) als Test-Runner und i18n-Linter:
 
 ```bash
-# Alle Tests & Linter ausführen
+# Alle Tests ausführen (Struktur, Barrierefreiheit, Assets, Subtitles, Security)
 bun test
 
-# Spezifischer i18n Übersetzungs-Coverage Linter
+# 100% i18n Übersetzungs-Coverage Linter ausführen
 bun run lint:i18n
-```
 
-Die Tests überprüfen:
-- **100% i18n DOM Coverage:** Jedes `data-i18n`-Attribut in `index.html` muss in allen 5 Sprachen (DE, EN, FR, NL, CZ) existieren.
-- **Wörterbuch-Parität & Symmetrie:** Keine fehlenden oder leeren Übersetzungen zwischen den Sprachen.
-- **Vollständigkeit der Transkripte:** Valide Zeitmarken und Texte für alle 5 Sprachversionen.
-- **Gültigkeit der CSS-Variablen & Responsive Breakpoints**
-- **Physische Existenz aller Assets (PDF, Bild, Audio)**
-- **Sicherheitsprüfung:** Keine versehentlich committeten Passwörter oder API-Keys.
+# Lokalen Entwicklungsserver starten
+bun run dev
+```
 
 ---
 
-## 💻 Lokale Entwicklung
+## 🚀 Deployment & CI/CD Pipeline
 
-Starten eines lokalen Entwicklungsservers:
+Das Deployment ist über GitHub Actions automatisiert. Siehe ausführliche Anleitung in **[`DEPLOYMENT.md`](DEPLOYMENT.md)**.
 
-```bash
-# Mit Bun:
-bun --serve .
-
-# Oder mit Python 3:
-python3 -m http.server 8080
-```
-
-Anschließend im Browser unter `http://localhost:8080` aufrufen.
-
----
-
-## 🚀 Deployment-Anleitung
-
-### 1. United Domains (Webspace / FTP / SFTP)
-
-1. **Dateien übertragen**:
-   Laden Sie den gesamten Inhalt des Ordners `watteuropa-web/` (`index.html`, `style.css`, `main.js`, `assets/`) in das Hauptverzeichnis Ihres United Domains Webspace (`public_html` oder `htdocs`) hoch.
-   
-   *SFTP / FTP Beispiel:*
-   ```bash
-   rsync -avz --exclude '.git' --exclude 'tests' ./ sftp-user@hosting.united-domains.de:/public_html/
-   ```
-
-2. **Domain-Routing bei United Domains**:
-   - Loggen Sie sich in Ihr [United Domains Domain-Portfolio](https://www.united-domains.de/) ein.
-   - Navigieren Sie zu `watteuropa.org` → **Webspace-Zuordnung** oder **DNS-Einstellungen**.
-   - Verweisen Sie den Webspace-Pfad auf das Verzeichnis mit der `index.html`.
-   - Falls extern gehostet:
-     - **A-Record** für `@` auf die Server-IP setzen.
-     - **CNAME-Record** für `www` auf die Zieladresse setzen.
-
-3. **Sicherheitshinweis**:
-   Hosting- und FTP-Passwörter gehören niemals in Git-Repositories. Nutzen Sie Umgebungsvariablen oder den KWallet/Schlüsselbund.
-
-### 2. Netlify / Vercel (Static CDN)
-
-1. Neues Projekt aus dem Git-Repository importieren.
-2. Build-Kommando: *leer lassen* (da reines statisches HTML/CSS/JS).
-3. Publish directory: `./`
-4. Custom Domain `watteuropa.org` verknüpfen und DNS CNAME/A-Einträge hinterlegen.
-
-### 3. GitHub Pages / GitLab Pages
-
-- In den Repository-Einstellungen unter **Pages** die Quelle auf Branch `main` und Root `/` stellen.
+1. **Stufe 1 (Quality Gate):** Jeder Push führt `bun test` und `bun run lint:i18n` aus.
+2. **Stufe 2 (United Domains Webspace Upload):** Bei Vorhandensein der GitHub Secrets (`UNITED_DOMAINS_HOST`, `UNITED_DOMAINS_USER`, `UNITED_DOMAINS_PASSWORD`) wird die Website automatisch verschlüsselt per FTPS auf den Webspace hochgeladen.
+3. **Alternative (DNS CNAME):** Aufschaltung der Domain `watteuropa.org` direkt auf das weltweite CDN von GitHub Pages.
 
 ---
 
@@ -137,7 +104,7 @@ Anschließend im Browser unter `http://localhost:8080` aufrufen.
   Der gesamte Programmcode (HTML, CSS, JavaScript, Slogan-Generator-Logik, CI/CD-Pipelines und Test-Suiten) steht unter der freien **[MIT-Lizenz](LICENSE)**.
 
 - **Künstlerische Werke, Medien & Exponate (Copyright Josef Tieber):**  
-  Alle künstlerischen Inhalte, kinetischen Skulpturen (*Hohe Europäische Rösser HER2a*), grafischen Ausarbeitungen, Exponat-Inlets (*201 DE 3, 201 EN 3, 201 FR 3, 201 NL 3, 201 CZ 4, 105 DE*), Druck-PDFs und Videoaufnahmen unterliegen dem alleinigen **Urheberrecht von Josef Tieber (WATT European Art)**. Alle Rechte vorbehalten.
+  Alle künstlerischen Inhalte, kinetischen Skulpturen (*Hohe Europäische Rösser HER2a*), grafischen Ausarbeitungen, Exponat-Inlets (*201 DE 3, 201 EN 3, 201 FR 3, 201 NL 3, 201 CZ 4, 105 DE*), Druck-PDFs und Videoaufnahmen unterliegen dem alleinigen **Urheberrecht von Josef Tieber (WATT European Art)** (*All rights reserved / Alle Rechte vorbehalten*).
 
 - **Projekt-Unabhängigkeit:**  
   *WATT / Nationalfreie Tage* ist ein eigenständiges Kunst- und Gesellschaftsprojekt von Josef Tieber und stellt kein offizielles Projekt oder Parteiorgan von Volt Europa dar.

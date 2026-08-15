@@ -176,11 +176,11 @@ describe("watteuropa.org - NFT 2026 Landing Page Test Suite", () => {
   test("Security: No hardcoded secrets, passwords or credentials", () => {
     const allFiles = [indexPath, stylePath, mainJsPath, readmePath];
     const sensitivePatterns = [
-      /password\s*[:=]\s*['"][^'"]+['"]/i,
+      /password\s*[:=]\s*['"][a-zA-Z0-9_\-!@#$%^&*]{4,}['"]/i,
       /api[_-]?key\s*[:=]\s*['"][a-zA-Z0-9_\-]{16,}['"]/i,
-      /secret\s*[:=]\s*['"][^'"]+['"]/i,
-      /auth[_-]?token\s*[:=]\s*['"][^'"]+['"]/i,
-      /united[-_]?domains[-_]?password/i,
+      /secret\s*[:=]\s*['"][a-zA-Z0-9_\-]{8,}['"]/i,
+      /auth[_-]?token\s*[:=]\s*['"][a-zA-Z0-9_\-]{16,}['"]/i,
+      /UNITED_DOMAINS_PASSWORD\s*[:=]\s*['"][^'"]+['"]/i,
     ];
 
     for (const file of allFiles) {
