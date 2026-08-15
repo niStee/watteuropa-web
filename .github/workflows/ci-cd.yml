@@ -13,6 +13,9 @@ on:
         type: boolean
         default: false
 
+# Scorecard requirement: explicit minimum permissions
+permissions: read-all
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -24,12 +27,14 @@ jobs:
   test-and-lint:
     name: Test & i18n Coverage Linter
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Setup Bun Environment
-        uses: oven-sh/setup-bun@v2
+        uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2.0.1
         with:
           bun-version: latest
 
@@ -47,9 +52,11 @@ jobs:
     needs: [ test-and-lint ]
     if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Check for United Domains Credentials
         id: check-secrets
@@ -63,7 +70,7 @@ jobs:
 
       - name: Deploy to Webspace via FTPS (TLS)
         if: steps.check-secrets.outputs.configured == 'true'
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@8e83cea8672e3fbcbb9fdafff34debf6ae4c5f65 # v4.3.5
         with:
           server: ${{ secrets.UNITED_DOMAINS_HOST }}
           username: ${{ secrets.UNITED_DOMAINS_USER }}
@@ -80,3 +87,5 @@ jobs:
             package.json
             README.md
             DEPLOYMENT.md
+            LICENSE
+            SECURITY.md
