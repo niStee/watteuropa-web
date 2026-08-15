@@ -1,9 +1,16 @@
 # watteuropa.org – Nationalfreie Tage 2026 (NFT 2026)
 
-[![CI/CD Pipeline - Test, Lint & Deploy](https://github.com/niStee/watteuropa-web/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/niStee/watteuropa-web/actions/workflows/ci-cd.yml)
-[![OpenSSF Scorecard Supply-Chain Security](https://github.com/niStee/watteuropa-web/actions/workflows/scorecard.yml/badge.svg)](https://github.com/niStee/watteuropa-web/actions/workflows/scorecard.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![i18n Coverage](https://img.shields.io/badge/i18n%20Coverage-100%25%20(DE%20%7C%20EN%20%7C%20FR%20%7C%20NL%20%7C%20CZ)-success.svg)](tests/i18n.test.ts)
+<p align="left">
+  <a href="https://nistee.github.io/watteuropa-web/"><img src="https://img.shields.io/badge/Live_Prototype-watteuropa.org-502379?style=flat&logo=safari&logoColor=white" alt="Live Prototype"></a>
+  <a href="https://github.com/niStee/watteuropa-web/actions/workflows/ci-cd.yml"><img src="https://github.com/niStee/watteuropa-web/actions/workflows/ci-cd.yml/badge.svg?branch=main" alt="CI/CD Pipeline"></a>
+  <a href="https://github.com/niStee/watteuropa-web/actions/workflows/scorecard.yml"><img src="https://github.com/niStee/watteuropa-web/actions/workflows/scorecard.yml/badge.svg?branch=main" alt="OpenSSF Scorecard CI"></a>
+  <a href="https://scorecard.dev/viewer/?uri=github.com/niStee/watteuropa-web"><img src="https://api.scorecard.dev/projects/github.com/niStee/watteuropa-web/badge" alt="OpenSSF Scorecard"></a>
+  <a href="https://bun.sh"><img src="https://img.shields.io/badge/Runtime-Bun%20v1.3+-fbf0df?style=flat&logo=bun&logoColor=black" alt="Bun Runtime"></a>
+  <a href="tests/i18n.test.ts"><img src="https://img.shields.io/badge/i18n-100%25%20(DE%20%7C%20EN%20%7C%20FR%20%7C%20NL%20%7C%20CZ)-success.svg?style=flat" alt="i18n Coverage"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/Code_License-MIT-blue.svg?style=flat" alt="Code License: MIT"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/Artworks-%C2%A9_Josef_Tieber-502379.svg?style=flat" alt="Artworks Copyright"></a>
+  <a href="DEPLOYMENT.md"><img src="https://img.shields.io/badge/Deploy-United_Domains-ff6600.svg?style=flat&logo=serverfault&logoColor=white" alt="United Domains Deploy"></a>
+</p>
 
 Offizielle, moderne Web-Landingpage und interaktiver Slogan-Generator für das europäische Kunst- und Gesellschaftsprojekt **WATT** von **Josef Tieber (Ing. HTL)** anlässlich der **3. Nationalfreien Tage (1. bis 3. Juni 2026)**.
 
