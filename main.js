@@ -240,6 +240,13 @@ const UI_TRANSLATIONS = {
     pragueTitle: '4. Nationalfreie Tage in Prag',
     pragueDesc: 'Nach dem erfolgreichen 3-Tage-Event 2026 in Wegberg weitet sich das Projekt aus: 4 Tage vom 1. bis 4. Juni 2027 in Prag. Gemeinsam mit europäischen Partnern für eine grenzenlose Zukunft.',
     pragueBtn: '📄 Tschechisches Inlet (PDF) herunterladen',
+    pragueCardTitle: '4. DNY BEZ NÁRODNOSTI',
+    pragueCardDate: '1. - 4. ČERVNA 2027 • PRAHA',
+    pragueCardSub: 'Celoevropsky & Celosvětově • Watt European Exponat 201 CZ 4',
+    pragueViewBtn: 'Inlet ansehen',
+
+    btnPreview: 'Vorschau',
+    btnPrint: 'PDF Druck',
 
     stat1Num: '3 Tage',
     stat1Lbl: 'Nationalfrei denken',
@@ -338,6 +345,13 @@ const UI_TRANSLATIONS = {
     pragueTitle: '4th Nation-Free Days in Prague',
     pragueDesc: 'Following the 2026 3-day event in Wegberg, the initiative expands: 4 days from June 1–4, 2027 in Prague with European partners for a borderless future.',
     pragueBtn: '📄 Download Czech Inlet (PDF)',
+    pragueCardTitle: '4. DNY BEZ NÁRODNOSTI',
+    pragueCardDate: '1. - 4. ČERVNA 2027 • PRAHA',
+    pragueCardSub: 'Celoevropsky & Celosvětově • Watt European Exponat 201 CZ 4',
+    pragueViewBtn: 'View Inlet',
+
+    btnPreview: 'Preview',
+    btnPrint: 'PDF Print',
 
     stat1Num: '3 Days',
     stat1Lbl: 'Thinking nation-free',
@@ -436,6 +450,13 @@ const UI_TRANSLATIONS = {
     pragueTitle: '4es Journées sans frontières à Prague',
     pragueDesc: 'Après l’édition 2026 à Wegberg, le projet s’étend : 4 jours du 1er au 4 juin 2027 à Prague avec des partenaires européens pour un avenir sans frontières.',
     pragueBtn: '📄 Télécharger l’inlet tchèque (PDF)',
+    pragueCardTitle: '4. DNY BEZ NÁRODNOSTI',
+    pragueCardDate: '1. - 4. ČERVNA 2027 • PRAHA',
+    pragueCardSub: 'Celoevropsky & Celosvětově • Watt European Exponat 201 CZ 4',
+    pragueViewBtn: 'Voir l’inlet',
+
+    btnPreview: 'Aperçu',
+    btnPrint: 'PDF Imprimer',
 
     stat1Num: '3 Jours',
     stat1Lbl: 'Esprit sans frontières',
@@ -534,6 +555,13 @@ const UI_TRANSLATIONS = {
     pragueTitle: '4e Nationaalvrije Dagen in Praag',
     pragueDesc: 'Na de 3-daagse editie van 2026 in Wegberg breidt het project uit: 4 dagen van 1 t/m 4 juni 2027 in Praag met Europese partners voor een grenzeloze toekomst.',
     pragueBtn: '📄 Download Tsjechische Inlet (PDF)',
+    pragueCardTitle: '4. DNY BEZ NÁRODNOSTI',
+    pragueCardDate: '1. - 4. ČERVNA 2027 • PRAHA',
+    pragueCardSub: 'Celoevropsky & Celosvětově • Watt European Exponat 201 CZ 4',
+    pragueViewBtn: 'Inlet bekijken',
+
+    btnPreview: 'Voorbeeld',
+    btnPrint: 'PDF Afdrukken',
 
     stat1Num: '3 Dagen',
     stat1Lbl: 'Nationaalvrij denken',
@@ -632,6 +660,13 @@ const UI_TRANSLATIONS = {
     pragueTitle: '4. Dny bez národnosti v Praze',
     pragueDesc: 'Po úspěšné 3denní akci v roce 2026 ve Wegbergu se projekt rozšiřuje: 4 dny od 1. do 4. června 2027 v Praze společně s evropskými partnery pro budoucnost bez hranic.',
     pragueBtn: '📄 Stáhnout český inlet (PDF)',
+    pragueCardTitle: '4. DNY BEZ NÁRODNOSTI',
+    pragueCardDate: '1. - 4. ČERVNA 2027 • PRAHA',
+    pragueCardSub: 'Celoevropsky & Celosvětově • Watt European Exponat 201 CZ 4',
+    pragueViewBtn: 'Zobrazit inlet',
+
+    btnPreview: 'Náhled',
+    btnPrint: 'PDF Tisk',
 
     stat1Num: '3 Dny',
     stat1Lbl: 'Myslet bez národnosti',
