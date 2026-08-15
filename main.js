@@ -868,6 +868,31 @@ function switchLanguage(langCode) {
   if (videosTitleEl && t.videosTitle) videosTitleEl.textContent = t.videosTitle;
   if (videosDescEl && t.videosDesc) videosDescEl.textContent = t.videosDesc;
 
+  // Dynamically swap Hero inlet image & modal action to match selected language
+  const heroInletImg = document.getElementById('heroInletImg');
+  const heroInletStage = document.getElementById('heroInletStage');
+  if (heroInletImg && heroInletStage) {
+    const inletThumbMap = {
+      de: 'assets/inlets/inlet-de-thumb.jpg',
+      en: 'assets/inlets/inlet-en-thumb.jpg',
+      fr: 'assets/inlets/inlet-fr-thumb.jpg',
+      nl: 'assets/inlets/inlet-nl-thumb.jpg',
+      cz: 'assets/inlets/inlet-cz-thumb.jpg'
+    };
+    const inletAltMap = {
+      de: 'Nationalfreie Tage 2026 German Inlet 201 DE 3',
+      en: 'National Free Days 2026 English Inlet 201 EN 3',
+      fr: 'Fête Anationale 2026 French Inlet 201 FR 3',
+      nl: 'Nationaalvrije Dagen 2026 Dutch Inlet 201 NL 3',
+      cz: 'Dny Bez Národnosti 2026 Czech Inlet 201 CZ 4'
+    };
+    if (inletThumbMap[langCode]) {
+      heroInletImg.src = inletThumbMap[langCode];
+      heroInletImg.alt = inletAltMap[langCode] || '';
+      heroInletStage.onclick = () => openInletModal(langCode);
+    }
+  }
+
   // Also synchronize subtitles with site language
   switchSubtitle(langCode);
 }
