@@ -57,19 +57,15 @@ describe("watteuropa.org - NFT 2026 Landing Page Test Suite", () => {
     expect(html).toContain("inlet-nl");
     expect(html).toContain("inlet-cz");
 
-    // 3. Video showcase with multi-day embeds and subtitle tracks
+    // 3. Video showcase with 4 official YouTube embeds & interactive transcript
     expect(html).toContain('id="videos"');
     expect(html).toContain("youtube-nocookie.com/embed/A7CWUPn2YEY"); // Day 3 Demo Wegberg
     expect(html).toContain("youtube-nocookie.com/embed/bjQgVwqIg44"); // Day 1
     expect(html).toContain("youtube-nocookie.com/embed/dTHp3CdKcmM"); // Day 2
-    expect(html).toContain("youtube-nocookie.com/embed/wrHgyR6Z_-I"); // Teaser/Summary
+    expect(html).toContain("youtube-nocookie.com/embed/wrHgyR6Z_-I"); // TV Version
 
-    // Subtitle tracks
-    expect(html).toContain("subtitles_de.vtt");
-    expect(html).toContain("subtitles_en.vtt");
-    expect(html).toContain("subtitles_fr.vtt");
-    expect(html).toContain("subtitles_nl.vtt");
-    expect(html).toContain("subtitles_cz.vtt");
+    // Interactive speech transcript
+    expect(html).toContain('id="transcriptLines"');
 
     // 4. About WATT & Josef Tieber
     expect(html).toContain('id="about"');

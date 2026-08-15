@@ -63,37 +63,27 @@ const INLETS_DATA = {
   }
 };
 
-// Video catalog & embeds
+// Video catalog & embeds (4 Official YouTube Videos)
 const VIDEO_CATALOG = {
   day3: {
     title: 'Tag 3: Abschlusskundgebung & Erläuterung Kunstwerk (Wegberg)',
     desc: 'Vollständige Kundgebung durch Wegberg mit Erläuterung der „Hohen Rösser“ und dem Europäischen Gruß.',
-    type: 'youtube',
     src: 'https://www.youtube-nocookie.com/embed/A7CWUPn2YEY'
   },
   tv: {
     title: 'TV Version (Framebuilder Media Edit • 2:30 min)',
     desc: 'Kompakte Fernseh- und Nachrichtenversion der Aktion für Rundfunk und soziale Medien.',
-    type: 'youtube',
     src: 'https://www.youtube-nocookie.com/embed/wrHgyR6Z_-I'
   },
   day1: {
     title: 'Tag 1: Political Evolution & Entstehungsgeschichte',
     desc: 'Von der Französischen Revolution bis GRÜN und VIOLETT als moderne europäische Leitkultur.',
-    type: 'youtube',
     src: 'https://www.youtube-nocookie.com/embed/bjQgVwqIg44'
   },
   day2: {
     title: 'Tag 2: Schengen², Europäische Netze & Zukunft',
     desc: 'Gemeinschaftliche Infrastruktur, europäische Bahnsysteme und einheitlicher Grenzschutz.',
-    type: 'youtube',
     src: 'https://www.youtube-nocookie.com/embed/dTHp3CdKcmM'
-  },
-  local: {
-    title: 'WATT Video Archiv & Statement Rohmaterial',
-    desc: 'Originalaufnahme mit zuschaltbaren Untertiteln in 5 Sprachen (DE, EN, FR, NL, CZ).',
-    type: 'local',
-    src: 'assets/videos/download_videos.mp4'
   }
 };
 
@@ -736,7 +726,7 @@ function closeInletModal() {
 }
 
 /**
- * Switch Video Tab in Player Section
+ * Switch Video Tab in Player Section (4 Official YouTube Videos)
  */
 function switchVideoTab(tabKey) {
   const videoData = VIDEO_CATALOG[tabKey];
@@ -758,29 +748,10 @@ function switchVideoTab(tabKey) {
   if (titleEl) titleEl.textContent = videoData.title;
   if (descEl) descEl.textContent = videoData.desc;
 
-  // Swap player elements
+  // Update YouTube iframe src
   const iframeEl = document.getElementById('ytPlayerIframe');
-  const localVideoEl = document.getElementById('localVideoPlayer');
-
-  if (videoData.type === 'youtube') {
-    if (localVideoEl) {
-      localVideoEl.style.display = 'none';
-      localVideoEl.pause();
-    }
-    if (iframeEl) {
-      iframeEl.style.display = 'block';
-      iframeEl.src = videoData.src;
-    }
-  } else {
-    if (iframeEl) {
-      iframeEl.style.display = 'none';
-      iframeEl.src = '';
-    }
-    if (localVideoEl) {
-      localVideoEl.style.display = 'block';
-      localVideoEl.src = videoData.src;
-      localVideoEl.load();
-    }
+  if (iframeEl) {
+    iframeEl.src = videoData.src;
   }
 }
 

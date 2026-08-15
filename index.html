@@ -305,7 +305,7 @@
           </p>
         </div>
 
-        <!-- Video Tab Switcher -->
+        <!-- Video Tab Switcher (4 Official YouTube Videos) -->
         <div class="video-tabs-bar" role="tablist" aria-label="Video-Auswahl">
           <button class="video-tab-btn active" data-tab="day3" data-embed-src="https://www.youtube-nocookie.com/embed/A7CWUPn2YEY" onclick="switchVideoTab('day3')" role="tab" data-i18n="videoTabDay3">
             Tag 3: Abschlusskundgebung Wegberg
@@ -319,9 +319,6 @@
           <button class="video-tab-btn" data-tab="day2" data-embed-src="https://www.youtube-nocookie.com/embed/dTHp3CdKcmM" onclick="switchVideoTab('day2')" role="tab" data-i18n="videoTabDay2">
             Tag 2: Schengen² & Zukunft
           </button>
-          <button class="video-tab-btn" data-tab="local" data-embed-src="assets/videos/download_videos.mp4" onclick="switchVideoTab('local')" role="tab" data-i18n="videoTabLocal">
-            WATT Archiv Video (Untertitel)
-          </button>
         </div>
 
         <!-- Video Player Frame -->
@@ -334,17 +331,6 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen>
             </iframe>
-
-            <!-- Local HTML5 Video Player with WebVTT Subtitle Tracks -->
-            <video id="localVideoPlayer" controls style="display: none;" poster="assets/videos/video-poster.jpg">
-              <source src="assets/videos/download_videos.mp4" type="video/mp4">
-              <track label="Deutsch" kind="subtitles" srclang="de" src="assets/subtitles/subtitles_de.vtt" default>
-              <track label="English" kind="subtitles" srclang="en" src="assets/subtitles/subtitles_en.vtt">
-              <track label="Français" kind="subtitles" srclang="fr" src="assets/subtitles/subtitles_fr.vtt">
-              <track label="Nederlands" kind="subtitles" srclang="nl" src="assets/subtitles/subtitles_nl.vtt">
-              <track label="Čeština" kind="subtitles" srclang="cz" src="assets/subtitles/subtitles_cz.vtt">
-              Ihr Browser unterstützt das Video-Tag leider nicht.
-            </video>
           </div>
 
           <!-- Video Info & Subtitle Bar -->
