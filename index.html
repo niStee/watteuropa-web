@@ -50,12 +50,13 @@
       <!-- Navigation Links -->
       <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
         <ul class="nav-links">
-          <li><a href="#hero" class="nav-link">NFT 2026</a></li>
-          <li><a href="#inlets" class="nav-link">Inlets (5 Sprachen)</a></li>
-          <li><a href="#videos" class="nav-link">Videos</a></li>
-          <li><a href="#about" class="nav-link">Über WATT & HER2a</a></li>
-          <li><a href="#mitmachen" class="nav-link">Mitmachen</a></li>
-          <li><a href="#impressum" class="nav-link">Kontakt</a></li>
+          <li><a href="#hero" class="nav-link" data-i18n="nav_nft">NFT 2026</a></li>
+          <li><a href="#inlets" class="nav-link" data-i18n="nav_inlets">Inlets (5 Sprachen)</a></li>
+          <li><a href="generator/" class="nav-link" target="_blank" title="Digitaler Slogan & Inlet Generator" data-i18n="nav_gen">🎨 Slogan Generator</a></li>
+          <li><a href="#videos" class="nav-link" data-i18n="nav_videos">Videos</a></li>
+          <li><a href="#about" class="nav-link" data-i18n="nav_about">Über WATT & HER2a</a></li>
+          <li><a href="#mitmachen" class="nav-link" data-i18n="nav_participate">Mitmachen</a></li>
+          <li><a href="#impressum" class="nav-link" data-i18n="nav_contact">Kontakt</a></li>
         </ul>
 
         <div class="nav-actions">
@@ -68,7 +69,7 @@
             <button class="lang-btn" data-lang="cz" onclick="switchLanguage('cz')" title="Čeština">CZ</button>
           </div>
 
-          <a href="#inlets" class="btn btn-primary btn-sm">Inlets drucken</a>
+          <a href="#inlets" class="btn btn-primary btn-sm" data-i18n="nav_print_btn">Inlets drucken</a>
         </div>
       </nav>
 
@@ -89,14 +90,14 @@
           <div class="hero-content">
             <div class="hero-pill">
               <span class="hero-pill-badge">3. Edition</span>
-              <span>1. bis 3. Juni 2026 • Wegberg / Europaweit</span>
+              <span data-i18n="heroDate">1. bis 3. Juni 2026 • Wegberg / Europaweit</span>
             </div>
 
-            <h1 class="hero-title" id="heroTitleText">
+            <h1 class="hero-title" id="heroTitleText" data-i18n="heroTitle">
               NATIONALFREIE <span class="highlight">TAGE 2026</span>
             </h1>
 
-            <p class="hero-subtitle" id="heroSubtitleText">
+            <p class="hero-subtitle" id="heroSubtitleText" data-i18n="heroSub">
               Raus aus den nationalen Heiligkeitsblasen – hinein in eine grenzenlose europäische und weltweite Gemeinschaft. Ein Gegenpol zu nationalem Egoismus und Ausgrenzung.
             </p>
 
@@ -104,16 +105,16 @@
             <div class="hero-greeting-box">
               <div class="greeting-label">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-                <span id="greetingLabelText">Europäischer Gruß</span>
+                <span id="greetingLabelText" data-i18n="greetingTitle">Europäischer Gruß</span>
               </div>
-              <blockquote class="greeting-quote" id="greetingQuoteText">
+              <blockquote class="greeting-quote" id="greetingQuoteText" data-i18n="greetingQuote">
                 «Runter mit den nationalen Eitelkeiten und Respekt, Respekt, Respekt vor dir!»
               </blockquote>
             </div>
 
             <div class="hero-actions">
-              <a href="#inlets" class="btn btn-primary btn-lg">Inlets (5 Sprachen) ansehen</a>
-              <a href="#videos" class="btn btn-secondary btn-lg">Abschlusskundgebung Video</a>
+              <a href="#inlets" class="btn btn-primary btn-lg" data-i18n="nav_inlets">Inlets (5 Sprachen) ansehen</a>
+              <a href="#videos" class="btn btn-secondary btn-lg" data-i18n="videoTabDay3">Abschlusskundgebung Video</a>
             </div>
 
             <div class="hero-stats-row">
@@ -154,11 +155,28 @@
     <section class="section section-alt" id="inlets">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">Offizielle Exponat-Inlets</span>
-          <h2 class="section-title" id="inletsSectionTitle">Die 5 Sprach-Inlets</h2>
-          <p class="section-desc" id="inletsSectionDesc">
+          <span class="section-badge" data-i18n="inletsBadge">Offizielle Exponat-Inlets</span>
+          <h2 class="section-title" id="inletsSectionTitle" data-i18n="inletsTitle">Die 5 Sprach-Inlets</h2>
+          <p class="section-desc" id="inletsSectionDesc" data-i18n="inletsDesc">
             Entdecken Sie die kreisrunden Exponat-Inlets in Deutsch, Englisch, Französisch, Niederländisch und Tschechisch. Zum Ansehen, Teilen und als druckfertige PDF-Vorlagen.
           </p>
+        </div>
+
+        <!-- Slogan Generator Interactive Feature Banner -->
+        <div class="generator-banner" style="background: linear-gradient(135deg, rgba(80, 35, 121, 0.06) 0%, rgba(86, 40, 129, 0.12) 100%); border: 1.5px solid rgba(80, 35, 121, 0.25); border-radius: 16px; padding: 24px 28px; margin-bottom: 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+          <div style="max-width: 680px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <span style="background: var(--brand-purple, #502379); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em;" data-i18n="gen_badge">Digitales Werkzeug</span>
+              <h3 style="margin: 0; font-size: 1.25rem; font-weight: 700; color: var(--text-heading, #161224);" data-i18n="gen_title">WATT Slogan & Circular Inlet Generator</h3>
+            </div>
+            <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted, #4a455a); line-height: 1.5;" data-i18n="gen_desc">
+              Erstellen Sie eigene kreisrunde WATT-Inlets in allen 5 Sprachen (DE, EN, FR, NL, CZ). Mit Live-Vorschau, Bogentext, Vektor-SVG, hochauflösendem 300 DPI PNG-Export und fertigen A4-Druckbögen zum Ausschneiden.
+            </p>
+          </div>
+          <a href="generator/" class="btn btn-primary" target="_blank" style="white-space: nowrap; display: inline-flex; align-items: center; gap: 8px;">
+            <span data-i18n="gen_btn">🎨 Generator starten</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
         </div>
 
         <div class="inlets-grid">
@@ -279,28 +297,28 @@
     <section class="section video-section" id="videos">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">Demonstration & Kundgebung</span>
-          <h2 class="section-title" id="videosSectionTitle">Video-Dokumentation & Demonstration</h2>
-          <p class="section-desc" id="videosSectionDesc">
+          <span class="section-badge" data-i18n="videosBadge">Demonstration & Kundgebung</span>
+          <h2 class="section-title" id="videosSectionTitle" data-i18n="videosTitle">Video-Dokumentation & Demonstration</h2>
+          <p class="section-desc" id="videosSectionDesc" data-i18n="videosDesc">
             Verfolgen Sie die Abschlusskundgebung in Wegberg, die Ansprachen von Josef Tieber und die Vorführung des kinetischen Kunstwerks „Hohe Europäische Rösser“.
           </p>
         </div>
 
         <!-- Video Tab Switcher -->
         <div class="video-tabs-bar" role="tablist" aria-label="Video-Auswahl">
-          <button class="video-tab-btn active" data-tab="day3" data-embed-src="https://www.youtube-nocookie.com/embed/A7CWUPn2YEY" onclick="switchVideoTab('day3')" role="tab">
+          <button class="video-tab-btn active" data-tab="day3" data-embed-src="https://www.youtube-nocookie.com/embed/A7CWUPn2YEY" onclick="switchVideoTab('day3')" role="tab" data-i18n="videoTabDay3">
             Tag 3: Abschlusskundgebung Wegberg
           </button>
-          <button class="video-tab-btn" data-tab="tv" data-embed-src="https://www.youtube-nocookie.com/embed/wrHgyR6Z_-I" onclick="switchVideoTab('tv')" role="tab">
+          <button class="video-tab-btn" data-tab="tv" data-embed-src="https://www.youtube-nocookie.com/embed/wrHgyR6Z_-I" onclick="switchVideoTab('tv')" role="tab" data-i18n="videoTabTv">
             TV Version (2:30 min)
           </button>
-          <button class="video-tab-btn" data-tab="day1" data-embed-src="https://www.youtube-nocookie.com/embed/bjQgVwqIg44" onclick="switchVideoTab('day1')" role="tab">
+          <button class="video-tab-btn" data-tab="day1" data-embed-src="https://www.youtube-nocookie.com/embed/bjQgVwqIg44" onclick="switchVideoTab('day1')" role="tab" data-i18n="videoTabDay1">
             Tag 1: Political Evolution
           </button>
-          <button class="video-tab-btn" data-tab="day2" data-embed-src="https://www.youtube-nocookie.com/embed/dTHp3CdKcmM" onclick="switchVideoTab('day2')" role="tab">
+          <button class="video-tab-btn" data-tab="day2" data-embed-src="https://www.youtube-nocookie.com/embed/dTHp3CdKcmM" onclick="switchVideoTab('day2')" role="tab" data-i18n="videoTabDay2">
             Tag 2: Schengen² & Zukunft
           </button>
-          <button class="video-tab-btn" data-tab="local" data-embed-src="assets/videos/download_videos.mp4" onclick="switchVideoTab('local')" role="tab">
+          <button class="video-tab-btn" data-tab="local" data-embed-src="assets/videos/download_videos.mp4" onclick="switchVideoTab('local')" role="tab" data-i18n="videoTabLocal">
             WATT Archiv Video (Untertitel)
           </button>
         </div>
@@ -353,9 +371,9 @@
           <div class="transcript-header">
             <h3 class="transcript-title">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              Interaktives Rede-Transkript (Klicken zum Anspringen)
+              <span data-i18n="transcriptTitle">Interaktives Rede-Transkript (Klicken zum Anspringen)</span>
             </h3>
-            <span style="font-size: 0.8125rem; color: var(--color-text-muted);">Synchronisiert in 5 Sprachen</span>
+            <span style="font-size: 0.8125rem; color: var(--color-text-muted);" data-i18n="transcriptSub">Synchronisiert in 5 Sprachen</span>
           </div>
           <div class="transcript-scroll" id="transcriptLines">
             <!-- Populated dynamically via main.js -->
@@ -368,9 +386,9 @@
     <section class="section section-alt" id="about">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">Konzept & Philosophie</span>
-          <h2 class="section-title">Über WATT & das Kunstwerk „Hohe Rösser“</h2>
-          <p class="section-desc">
+          <span class="section-badge" data-i18n="aboutBadge">Konzept & Philosophie</span>
+          <h2 class="section-title" data-i18n="aboutTitle">Über WATT & das Kunstwerk „Hohe Rösser“</h2>
+          <p class="section-desc" data-i18n="aboutDesc">
             Wie aus der europäischen Finanzkrise 2014 eine künstlerische Bewegung für mehr Gemeinschaftlichkeit und gegen nationalistische Abschottung entstand.
           </p>
         </div>
@@ -380,35 +398,35 @@
           <article class="about-card">
             <h3>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              Kinetisches Exponat „Hohe Europäische Rösser“ (HER2a)
+              <span data-i18n="her2aTitle">Kinetisches Exponat „Hohe Europäische Rösser“ (HER2a)</span>
             </h3>
-            <p>
+            <p data-i18n="her2aP1">
               Die Idee zum Kunstwerk entstand 2014. Josef Tieber beobachtete, wie sich europäische Nationalstaaten zunehmend von der gemeinsamen Idee abwandten und auf „hohe Rösser“ stiegen.
             </p>
             <ul class="artwork-feature-list">
               <li class="artwork-feature-item">
                 <span class="feature-bullet">1</span>
                 <div class="feature-text">
-                  <strong>28 Europäische Nationalstaaten</strong>
-                  <span>Kinetisch montiert auf Edelstahlblech-Fahrwerken, die um eine starre Mittelachse rotieren.</span>
+                  <strong data-i18n="her2aF1Title">28 Europäische Nationalstaaten</strong>
+                  <span data-i18n="her2aF1Desc">Kinetisch montiert auf Edelstahlblech-Fahrwerken, die um eine starre Mittelachse rotieren.</span>
                 </div>
               </li>
               <li class="artwork-feature-item">
                 <span class="feature-bullet">2</span>
                 <div class="feature-text">
-                  <strong>Starre Mittelachse & Erdmittelpunkt</strong>
-                  <span>Weist symbolisch auf unumstößliche Weltordnung, Völkerrecht, Europarecht und gemeinsame Menschenwürde hin.</span>
+                  <strong data-i18n="her2aF2Title">Starre Mittelachse & Erdmittelpunkt</strong>
+                  <span data-i18n="her2aF2Desc">Weist symbolisch auf unumstößliche Weltordnung, Völkerrecht, Europarecht und gemeinsame Menschenwürde hin.</span>
                 </div>
               </li>
               <li class="artwork-feature-item">
                 <span class="feature-bullet">3</span>
                 <div class="feature-text">
-                  <strong>Runter von den hohen Rössern</strong>
-                  <span>Je weiter die Staaten herabsteigen und sich dem Zentrum nähern, desto kraftvoller und stabiler können sie gemeinsam ziehen.</span>
+                  <strong data-i18n="her2aF3Title">Runter von den hohen Rössern</strong>
+                  <span data-i18n="her2aF3Desc">Je weiter die Staaten herabsteigen und sich dem Zentrum nähern, desto kraftvoller und stabiler können sie gemeinsam ziehen.</span>
                 </div>
               </li>
             </ul>
-            <p>
+            <p data-i18n="her2aP2">
               Statt die Geschichte rückwärts zu drehen, soll Europa kraftvoll angeschoben werden – hin zu gemeinsamen Institutionen und echter europäischer Souveränität.
             </p>
           </article>
@@ -417,16 +435,16 @@
           <article class="about-card">
             <h3>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              Warum Nationalfreie Tage?
+              <span data-i18n="whyTitle">Warum Nationalfreie Tage?</span>
             </h3>
-            <p>
+            <p data-i18n="whyP1">
               „Wenn man die Liste der Nationalfeiertage durchsieht, gibt es unzählige Feiertage für Unabhängigkeit und heroische Nation. Diese Denkstrukturen aus dem 19. Jahrhundert sind heute überlebt.“
             </p>
-            <p>
+            <p data-i18n="whyP2">
               Die Nationalfreien Tage schaffen einen bewussten Raum im Kalender, um sich von nationaler Denke und Heiligkeitsblasen frei zu machen, ohne sich gegenseitig zu dämonisieren.
             </p>
             <blockquote style="border-left: 3px solid var(--color-primary); padding-left: 1rem; margin: 1rem 0; font-style: italic; color: var(--color-text-main);">
-              „Jeder einzelne Mensch ist ungeheuer wertvoll und in seiner Würde unantastbar. Wir stehen zum Frieden – für alle Menschen weltweit.“
+              <span data-i18n="whyQuote">„Jeder einzelne Mensch ist ungeheuer wertvoll und in seiner Würde unantastbar. Wir stehen zum Frieden – für alle Menschen weltweit.“</span>
               <footer style="font-weight: 700; margin-top: 0.35rem; color: var(--color-primary);">— Josef Tieber, Ing. (HTL)</footer>
             </blockquote>
           </article>
@@ -435,17 +453,17 @@
         <!-- Historical Exhibits: Political Evolution & Schengen² -->
         <div class="exhibit-cards-row">
           <div class="exhibit-card">
-            <span class="exhibit-badge">Historisches Exponat</span>
-            <h4 class="exhibit-title">Political Evolution</h4>
-            <p class="exhibit-desc">
+            <span class="exhibit-badge" data-i18n="polyBadge">Historisches Exponat</span>
+            <h4 class="exhibit-title" data-i18n="polyTitle">Political Evolution</h4>
+            <p class="exhibit-desc" data-i18n="polyDesc">
               Von der Französischen Revolution über liberale und ökologische Bewegungen (GRÜN) bis hin zu VIOLETT als zeitgemäße, übernationale europäische Leitkultur des 21. Jahrhunderts.
             </p>
           </div>
 
           <div class="exhibit-card">
-            <span class="exhibit-badge">Infrastruktur & Recht</span>
-            <h4 class="exhibit-title">Schengen² & Gemeinsame Netze</h4>
-            <p class="exhibit-desc">
+            <span class="exhibit-badge" data-i18n="schengenBadge">Infrastruktur & Recht</span>
+            <h4 class="exhibit-title" data-i18n="schengenTitle">Schengen² & Gemeinsame Netze</h4>
+            <p class="exhibit-desc" data-i18n="schengenDesc">
               Ein einziger, verlässlicher EU-Außengrenzschutz kombiniert mit nahtloser Koordination: vom gesamteuropäischen Bahn-Ticketing bis zum gemeinsamen Schutz universeller Grundrechte.
             </p>
           </div>
@@ -457,9 +475,9 @@
     <section class="section" id="mitmachen">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">Jeder kann mitmachen</span>
-          <h2 class="section-title">Aktiv werden für die Nationalfreien Tage</h2>
-          <p class="section-desc">
+          <span class="section-badge" data-i18n="partBadge">Jeder kann mitmachen</span>
+          <h2 class="section-title" data-i18n="partTitle">Aktiv werden für die Nationalfreien Tage</h2>
+          <p class="section-desc" data-i18n="partDesc">
             Das Projekt lebt vom Mitmachen. Werden Sie Teil der Bewegung und setzen Sie ein sichtbares Zeichen für mehr Zusammenhalt.
           </p>
         </div>
@@ -467,42 +485,42 @@
         <div class="action-grid">
           <div class="action-card">
             <div class="action-icon">📥</div>
-            <h3 class="action-title">1. Inlets drucken & teilen</h3>
-            <p class="action-desc">Laden Sie die 5 Sprach-Inlets als hochwertige PDF-Druckvorlagen herunter und hängen Sie sie in Ihrem Schaufenster, Büro oder Verein auf.</p>
-            <a href="#inlets" class="btn btn-outline btn-sm">Zu den Downloads</a>
+            <h3 class="action-title" data-i18n="act1Title">1. Inlets drucken & teilen</h3>
+            <p class="action-desc" data-i18n="act1Desc">Laden Sie die 5 Sprach-Inlets als hochwertige PDF-Druckvorlagen herunter und hängen Sie sie in Ihrem Schaufenster, Büro oder Verein auf.</p>
+            <a href="#inlets" class="btn btn-outline btn-sm" data-i18n="act1Btn">Zu den Downloads</a>
           </div>
 
           <div class="action-card">
             <div class="action-icon">🗣️</div>
-            <h3 class="action-title">2. Europäischen Gruß leben</h3>
-            <p class="action-desc">„Runter mit den nationalen Eitelkeiten und Respekt vor dir!“ Verwenden Sie den Gruß als Zeichen der Offenheit und Verbundenheit.</p>
-            <a href="#hero" class="btn btn-outline btn-sm">Mehr zum Gruß</a>
+            <h3 class="action-title" data-i18n="act2Title">2. Europäischen Gruß leben</h3>
+            <p class="action-desc" data-i18n="act2Desc">„Runter mit den nationalen Eitelkeiten und Respekt vor dir!“ Verwenden Sie den Gruß als Zeichen der Offenheit und Verbundenheit.</p>
+            <a href="#hero" class="btn btn-outline btn-sm" data-i18n="act2Btn">Mehr zum Gruß</a>
           </div>
 
           <div class="action-card">
             <div class="action-icon">🤝</div>
-            <h3 class="action-title">3. Lokale Aktionen starten</h3>
-            <p class="action-desc">Veranstalten Sie eigene Diskussionsabende, Kunstaktionen oder Treffen zur Überwindung nationaler Vorurteile in Ihrer Stadt.</p>
-            <a href="#impressum" class="btn btn-outline btn-sm">Kontakt aufnehmen</a>
+            <h3 class="action-title" data-i18n="act3Title">3. Lokale Aktionen starten</h3>
+            <p class="action-desc" data-i18n="act3Desc">Veranstalten Sie eigene Diskussionsabende, Kunstaktionen oder Treffen zur Überwindung nationaler Vorurteile in Ihrer Stadt.</p>
+            <a href="#impressum" class="btn btn-outline btn-sm" data-i18n="act3Btn">Kontakt aufnehmen</a>
           </div>
 
           <div class="action-card">
             <div class="action-icon">🌍</div>
-            <h3 class="action-title">4. Prag 2027 vorbereiten</h3>
-            <p class="action-desc">Merken Sie sich die 4. Ausgabe vor: 1. bis 4. Juni 2027 in Prag (4 Dny Bez Národnosti) – ein großes internationales Gemeinschaftsevent.</p>
-            <a href="#prague2027" class="btn btn-outline btn-sm">Ausblick 2027</a>
+            <h3 class="action-title" data-i18n="act4Title">4. Prag 2027 vorbereiten</h3>
+            <p class="action-desc" data-i18n="act4Desc">Merken Sie sich die 4. Ausgabe vor: 1. bis 4. Juni 2027 in Prag (4 Dny Bez Národnosti) – ein großes internationales Gemeinschaftsevent.</p>
+            <a href="#prague2027" class="btn btn-outline btn-sm" data-i18n="act4Btn">Ausblick 2027</a>
           </div>
         </div>
 
         <!-- Prague 2027 Banner -->
         <div class="prague-banner" id="prague2027">
           <div>
-            <span class="prague-badge">Ausblick 2027</span>
-            <h3 class="prague-title">4. Nationalfreie Tage in Prag</h3>
-            <p class="prague-desc">
+            <span class="prague-badge" data-i18n="pragueBadge">Ausblick 2027</span>
+            <h3 class="prague-title" data-i18n="pragueTitle">4. Nationalfreie Tage in Prag</h3>
+            <p class="prague-desc" data-i18n="pragueDesc">
               Nach dem erfolgreichen 3-Tage-Event 2026 in Wegberg weitet sich das Projekt aus: 4 Tage vom 1. bis 4. Juni 2027 in Prag. Gemeinsam mit europäischen Partnern für eine grenzenlose Zukunft.
             </p>
-            <a href="assets/pdf/201 CZ 4.pdf" class="btn btn-secondary btn-sm" download="WATT-Inlet-201-CZ-4-Prague.pdf">
+            <a href="assets/pdf/201 CZ 4.pdf" class="btn btn-secondary btn-sm" download="WATT-Inlet-201-CZ-4-Prague.pdf" data-i18n="pragueBtn">
               📄 Tschechisches Inlet (PDF) herunterladen
             </a>
           </div>
@@ -555,7 +573,7 @@
         <!-- Brand & Mission -->
         <div class="footer-brand">
           <h4>WATT ART</h4>
-          <p>
+          <p data-i18n="footerTagline">
             Future for Europe • Kunst- und Gesellschaftsprojekt für die Überwindung nationaler Grenzen und für weltweite Solidarität.
           </p>
           <div style="margin-top: 1rem;">
@@ -567,20 +585,20 @@
 
         <!-- Quick Links -->
         <div class="footer-col">
-          <h5>Navigation</h5>
+          <h5 data-i18n="footerNavTitle">Navigation</h5>
           <ul class="footer-links">
-            <li><a href="#hero">Nationalfreie Tage 2026</a></li>
-            <li><a href="#inlets">Inlets (5 Sprachen)</a></li>
-            <li><a href="#videos">Video-Dokumentation</a></li>
-            <li><a href="#about">Hohe Rösser & HER2a</a></li>
-            <li><a href="#mitmachen">Mitmachen & Aktionen</a></li>
-            <li><a href="#prague2027">Ausblick Prag 2027</a></li>
+            <li><a href="#hero" data-i18n="nav_nft">Nationalfreie Tage 2026</a></li>
+            <li><a href="#inlets" data-i18n="nav_inlets">Inlets (5 Sprachen)</a></li>
+            <li><a href="#videos" data-i18n="nav_videos">Video-Dokumentation</a></li>
+            <li><a href="#about" data-i18n="nav_about">Hohe Rösser & HER2a</a></li>
+            <li><a href="#mitmachen" data-i18n="nav_participate">Mitmachen & Aktionen</a></li>
+            <li><a href="#prague2027" data-i18n="pragueBadge">Ausblick Prag 2027</a></li>
           </ul>
         </div>
 
         <!-- Contact & Legal Impressum -->
         <div class="footer-col">
-          <h5>Impressum & Kontakt</h5>
+          <h5 data-i18n="footerContactTitle">Impressum & Kontakt</h5>
           <div class="contact-card">
             <strong>Josef Tieber, Ing. (HTL)</strong>
             <span>Jakob-Hoogen-Str. 68</span><br>
@@ -597,7 +615,7 @@
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; 2026 WATT European Art • Josef Tieber • watteuropa.org</span>
+        <span data-i18n="footerBottomCopy">&copy; 2026 WATT European Art • Josef Tieber • watteuropa.org</span>
         <span>Statisches Web-Landingpage • Bereit für United Domains / Netlify / GitHub Pages</span>
       </div>
     </div>

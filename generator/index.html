@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WATT European Art • Slogan &amp; Inlet Generator</title>
+  <meta name="description" content="Offizieller WATT / Volt Slogan &amp; Inlet Generator für Josef Tieber und das WATT European Art Team. Erstellen, Anpassen und Drucken von kreisförmigen Badges und Exponat-Inlets in 5 Sprachen (DE, EN, FR, NL, CZ).">
+  
+  <!-- Google Fonts: Montserrat, Inter, Oswald, Roboto Condensed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800;900&family=Oswald:wght@600;700&family=Roboto+Condensed:wght@700&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Application Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-section">
+        <div class="brand-logo-badge">WATT</div>
+        <div class="brand-titles">
+          <h1>
+            European Art • Slogan &amp; Inlet Generator
+            <span class="header-badge-tag">NFT 2026 Ready</span>
+          </h1>
+          <p>Exponate, Badges &amp; Einleger für Volt &amp; WATT Europa • Josef Tieber</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btnQuickPrint" class="btn btn-gold btn-sm" title="Druckbogen direkt drucken (A4)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          Druckbogen (A4)
+        </button>
+        <button id="btnExportBatchZipHeader" class="btn btn-dark btn-sm" title="Alle 5 Sprachen als ZIP herunterladen">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Batch ZIP (5 Sprachen)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Application Workspace -->
+  <main class="app-main">
+    <div class="workspace-layout">
+
+      <!-- Left Column: Controls & Configuration Panel -->
+      <aside class="control-panel">
+
+        <!-- 1. Presets & Languages Accordion -->
+        <section class="accordion-card" id="cardPresets">
+          <div class="card-header">
+            <h2>
+              <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              1. Slogan Vorlagen &amp; Sprache
+            </h2>
+          </div>
+          <div class="card-content">
+            <!-- Language Selector Pills -->
+            <div class="form-group">
+              <label class="form-label">
+                <span>Sprache / Language</span>
+                <span class="form-label-desc">5 offizielle Übersetzungen</span>
+              </label>
+              <div class="language-selector" id="languageSelector">
+                <button type="button" class="lang-btn active" data-lang="DE">🇩🇪 DE</button>
+                <button type="button" class="lang-btn" data-lang="EN">🇬🇧 EN</button>
+                <button type="button" class="lang-btn" data-lang="FR">🇫🇷 FR</button>
+                <button type="button" class="lang-btn" data-lang="NL">🇳🇱 NL</button>
+                <button type="button" class="lang-btn" data-lang="CZ">🇨🇿 CZ</button>
+              </div>
+            </div>
+
+            <!-- Built-in Slogan Presets List -->
+            <div class="form-group">
+              <label class="form-label">
+                <span>Offizielle Vorlagen (NFT 2026 / Exponate)</span>
+              </label>
+              <div class="preset-list" id="presetList">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Text & Content Configuration -->
+        <section class="accordion-card" id="cardTypography">
+          <div class="card-header">
+            <h2>
+              <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+              2. Textinhalte &amp; Typografie
+            </h2>
+          </div>
+          <div class="card-content">
+            <!-- Top Arc Text -->
+            <div class="form-group">
+              <label class="form-label" for="inputTopArc">
+                <span>Oberer Bogen (Titel / Anlass)</span>
+                <span class="form-label-desc">Gebogener Text oben</span>
+              </label>
+              <input type="text" id="inputTopArc" class="form-input" value="3. NATIONAL FREIEN TAGE" placeholder="Z.B. SCHENGEN ² oder 3. NATIONAL FREIE TAGE">
+            </div>
+
+            <!-- Center Slogan (Multi-line) -->
+            <div class="form-group">
+              <label class="form-label" for="inputSlogan">
+                <span>Zentraler Slogan (Haupttext)</span>
+                <span class="form-label-desc">Jede Zeile = Neue Textzeile</span>
+              </label>
+              <textarea id="inputSlogan" class="form-textarea" rows="3" placeholder="Z.B.&#10;EIN&#10;EINZIGER&#10;EU GRENZSCHUTZ">1. bis 3. JUNI&#10;2026</textarea>
+            </div>
+
+            <!-- Row: Center Number & Subtext -->
+            <div class="input-row">
+              <div class="form-group">
+                <label class="form-label" for="inputCenterNumber">
+                  <span>Nummer / Präfix</span>
+                </label>
+                <input type="text" id="inputCenterNumber" class="form-input" value="3." placeholder="Z.B. 3. oder 3e">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inputSubtext">
+                  <span>Zusatz / Datum</span>
+                </label>
+                <input type="text" id="inputSubtext" class="form-input" value="EUROPAWEIT • WELTWEIT" placeholder="Z.B. EUROPAWEIT • WELTWEIT">
+              </div>
+            </div>
+
+            <!-- Catalog / Exponat Tag -->
+            <div class="form-group">
+              <label class="form-label" for="inputCatalog">
+                <span>Exponat-Nummer / Archiv-Code</span>
+                <span class="form-label-desc">Katalogkennung</span>
+              </label>
+              <input type="text" id="inputCatalog" class="form-input" value="Watt European Exponat 201 DE 3" placeholder="Z.B. Watt European Exponat 201 DE 3">
+            </div>
+
+            <!-- Bottom Arc Text -->
+            <div class="form-group">
+              <label class="form-label" for="inputBottomArc">
+                <span>Unterer Bogen (Weblink / Claim)</span>
+                <span class="form-label-desc">Gebogener Text unten</span>
+              </label>
+              <input type="text" id="inputBottomArc" class="form-input" value="WATT ART • FUTURE FOR EUROPE" placeholder="Z.B. WATT ART • FUTURE FOR EUROPE oder www.watteuropa.org">
+            </div>
+
+            <!-- Font Family & Uppercase Controls -->
+            <div class="input-row">
+              <div class="form-group">
+                <label class="form-label" for="selectFontFamily">
+                  <span>Schriftart</span>
+                </label>
+                <select id="selectFontFamily" class="form-select">
+                  <option value="Montserrat" selected>Montserrat (Modern / Volt)</option>
+                  <option value="Inter">Inter (Clean / Neutral)</option>
+                  <option value="Oswald">Oswald (Kompakt / Stark)</option>
+                  <option value="Roboto Condensed">Roboto Condensed (Plakativ)</option>
+                  <option value="Cinzel">Cinzel (Klassisch / Monument)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="selectSloganWeight">
+                  <span>Schriftstärke</span>
+                </label>
+                <select id="selectSloganWeight" class="form-select">
+                  <option value="600">Semi-Bold (600)</option>
+                  <option value="700">Bold (700)</option>
+                  <option value="800" selected>Extra-Bold (800)</option>
+                  <option value="900">Black / Ultra (900)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="toggle-row">
+              <span class="toggle-label">Großbuchstaben erzwingen (UPPERCASE)</span>
+              <label class="switch">
+                <input type="checkbox" id="toggleUppercase" checked>
+                <span class="slider-switch"></span>
+              </label>
+            </div>
+
+            <!-- Fine-tuning Sliders -->
+            <div class="slider-group">
+              <div class="slider-header">
+                <span>Slogan Schriftgröße</span>
+                <span id="labelSloganFontSize">58px</span>
+              </div>
+              <input type="range" id="sliderSloganFontSize" class="form-range" min="30" max="84" value="58">
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-header">
+                <span>Bogen-Schriftgröße (Oben/Unten)</span>
+                <span id="labelArcFontSize">38px</span>
+              </div>
+              <input type="range" id="sliderArcFontSize" class="form-range" min="20" max="52" value="38">
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Color Themes & Palette -->
+        <section class="accordion-card" id="cardColors">
+          <div class="card-header">
+            <h2>
+              <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a7 7 0 0 0 0 14v6"></path><circle cx="12" cy="7" r="1"></circle></svg>
+              3. Farbthema &amp; Stil
+            </h2>
+          </div>
+          <div class="card-content">
+            <div class="theme-grid" id="themeGrid">
+              <!-- Rendered via JS -->
+            </div>
+
+            <!-- Custom Color Pickers (Revealed when Custom Theme selected) -->
+            <div class="color-picker-grid" id="customColorContainer" style="display: none;">
+              <div class="color-input-item">
+                <label for="colorBg">Hintergrund</label>
+                <div class="color-input-wrapper">
+                  <input type="color" id="colorBg" value="#ffffff">
+                </div>
+              </div>
+              <div class="color-input-item">
+                <label for="colorPrimary">Hauptfarbe / Text</label>
+                <div class="color-input-wrapper">
+                  <input type="color" id="colorPrimary" value="#502379">
+                </div>
+              </div>
+              <div class="color-input-item">
+                <label for="colorAccent">Akzent (Sterne / Gold)</label>
+                <div class="color-input-wrapper">
+                  <input type="color" id="colorAccent" value="#ffcc00">
+                </div>
+              </div>
+              <div class="color-input-item">
+                <label for="colorBorder">Rahmen / Linien</label>
+                <div class="color-input-wrapper">
+                  <input type="color" id="colorBorder" value="#502379">
+                </div>
+              </div>
+              <div class="color-input-item">
+                <label for="colorCutLine">Schnittlinie</label>
+                <div class="color-input-wrapper">
+                  <input type="color" id="colorCutLine" value="#b5a4cf">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Graphic Elements & Print Guides -->
+        <section class="accordion-card" id="cardGraphics">
+          <div class="card-header">
+            <h2>
+              <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              4. Grafische Elemente &amp; Schnittführung
+            </h2>
+          </div>
+          <div class="card-content">
+            <!-- EU Star Ring Controls -->
+            <div class="input-row">
+              <div class="form-group">
+                <label class="form-label" for="selectStarPosition">
+                  <span>Europa-Sterne Position</span>
+                </label>
+                <select id="selectStarPosition" class="form-select">
+                  <option value="top" selected>Oben (Krone 7 Sterne)</option>
+                  <option value="full">Vollkreis (12 Europa-Sterne)</option>
+                  <option value="sides">Flanken (Links &amp; Rechts)</option>
+                  <option value="none">Keine Sterne</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inputDiameter">
+                  <span>Durchmesser (mm)</span>
+                </label>
+                <select id="inputDiameter" class="form-select">
+                  <option value="95" selected>95 mm (Standard WATT)</option>
+                  <option value="100">100 mm (Großes Exponat)</option>
+                  <option value="75">75 mm (Medium Badge)</option>
+                  <option value="56">56 mm (Pin / Button)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Toggles for Rings and Emblem -->
+            <div class="toggle-row">
+              <span class="toggle-label">WATT European Art Emblem</span>
+              <label class="switch">
+                <input type="checkbox" id="toggleEmblem" checked>
+                <span class="slider-switch"></span>
+              </label>
+            </div>
+
+            <div class="toggle-row">
+              <span class="toggle-label">Innere Schmuckringe</span>
+              <label class="switch">
+                <input type="checkbox" id="toggleInnerRings" checked>
+                <span class="slider-switch"></span>
+              </label>
+            </div>
+
+            <div class="toggle-row">
+              <span class="toggle-label">Gepunktete Schnittlinie &amp; Fadenkreuze</span>
+              <label class="switch">
+                <input type="checkbox" id="toggleCutLine" checked>
+                <span class="slider-switch"></span>
+              </label>
+            </div>
+
+            <!-- Border Width Slider -->
+            <div class="slider-group">
+              <div class="slider-header">
+                <span>Äußere Rahmenstärke</span>
+                <span id="labelBorderWidth">8px</span>
+              </div>
+              <input type="range" id="sliderBorderWidth" class="form-range" min="0" max="24" value="8">
+            </div>
+          </div>
+        </section>
+
+      </aside>
+
+      <!-- Right Column: Interactive Stage & Export Center -->
+      <section class="preview-panel">
+
+        <!-- Stage View Mode Selector Tabs -->
+        <div class="view-tabs-bar">
+          <div class="tab-buttons">
+            <button type="button" class="tab-btn active" id="tabBtnSingle" data-tab="single">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg>
+              Einzelner Einleger
+            </button>
+            <button type="button" class="tab-btn" id="tabBtnSheet" data-tab="sheet">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="3"></circle><circle cx="15.5" cy="8.5" r="3"></circle><circle cx="8.5" cy="15.5" r="3"></circle><circle cx="15.5" cy="15.5" r="3"></circle></svg>
+              A4 Druckbogen (4er Grid)
+            </button>
+            <button type="button" class="tab-btn" id="tabBtnBatch" data-tab="batch">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              Sprach-Matrix (5 Sprachen)
+            </button>
+          </div>
+
+          <div class="preview-controls">
+            <!-- Sheet layout selector (only visible in sheet mode) -->
+            <select id="selectSheetLayout" class="form-select btn-sm" style="display: none; width: auto;">
+              <option value="2x2" selected>2x2 Grid (4 Einleger)</option>
+              <option value="1x2">1x2 Grid (2 Große Einleger)</option>
+              <option value="2x3">2x3 Grid (6 Einleger)</option>
+            </select>
+
+            <button type="button" id="btnToggleBackground" class="btn-icon" title="Hintergrund umschalten (Weiß / Schachbrett)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </button>
+            <button type="button" id="btnResetConfig" class="btn-icon" title="Auf Standardwerte zurücksetzen">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Visual Render Stage Card -->
+        <div class="preview-card" id="previewCard">
+          
+          <!-- Mode 1: Single Badge Render -->
+          <div class="badge-render-container" id="singleBadgeContainer">
+            <!-- Dynamic SVG is injected here -->
+          </div>
+
+          <!-- Mode 2: A4 Print Sheet Render -->
+          <div class="print-sheet-view" id="printSheetContainer">
+            <!-- Print Sheet SVG is injected here -->
+          </div>
+
+          <!-- Mode 3: Batch Multi-Language Matrix -->
+          <div class="batch-matrix-view" id="batchMatrixContainer">
+            <!-- Batch cards injected here -->
+          </div>
+
+          <!-- Offscreen Canvas for High-Res 300 DPI Export -->
+          <canvas id="exportCanvas" width="2048" height="2048"></canvas>
+        </div>
+
+        <!-- Export & Action Toolbar -->
+        <div class="export-bar">
+          <div class="export-specs">
+            <span class="export-spec-pill" id="specResolution">300 DPI • 2048×2048 px</span>
+            <span id="specDimensions">Ø 95 mm Einleger</span>
+          </div>
+
+          <div class="export-buttons">
+            <button type="button" id="btnCopySvg" class="btn btn-secondary btn-sm" title="SVG Code in die Zwischenablage kopieren">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              SVG kopieren
+            </button>
+            <button type="button" id="btnDownloadSvg" class="btn btn-secondary btn-sm" title="Vektordatei für Plotter, Laser & Druck">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Vektor SVG
+            </button>
+            <button type="button" id="btnDownloadPng" class="btn btn-primary btn-sm" title="Hochauflösendes 300 DPI PNG herunterladen">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              High-Res PNG (300 DPI)
+            </button>
+            <button type="button" id="btnPrintSheet" class="btn btn-gold btn-sm" title="A4 Druckbogen drucken oder als PDF speichern">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              A4 Bogen drucken
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JavaScript Modules -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>

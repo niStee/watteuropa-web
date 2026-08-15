@@ -162,6 +162,15 @@ describe("watteuropa.org - NFT 2026 Landing Page Test Suite", () => {
     expect(js).toContain("fr:");
     expect(js).toContain("nl:");
     expect(js).toContain("cz:");
+
+    // Verify key section translations exist in dictionary
+    expect(js).toContain("her2aTitle");
+    expect(js).toContain("whyTitle");
+    expect(js).toContain("polyTitle");
+    expect(js).toContain("schengenTitle");
+    expect(js).toContain("partTitle");
+    expect(js).toContain("pragueTitle");
+    expect(js).toContain("footerTagline");
   });
 
   test("Security: No hardcoded secrets, passwords or credentials", () => {
