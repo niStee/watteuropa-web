@@ -1,6 +1,6 @@
 /**
- * WATT Slogan / Inlet Generator - Interactive Controller & UI Engine
- * Pair programming implementation for Josef Tieber & Volt/WATT European Art Team
+ * WATT Slogan / Circular Inlet Generator - Interactive Controller & UI Engine
+ * Developed for Josef Tieber & the WATT European Art Team
  */
 
 import {
@@ -512,7 +512,7 @@ async function exportBatchZip() {
     name: 'README-WATT-INLETS.txt',
     content: `WATT European Art • Slogan & Inlet Generator Export
 Exponat: ${preset.name}
-Erstellt für: Josef Tieber & Volt / WATT Team
+Erstellt für: Josef Tieber & WATT European Art Team
 Auflösung PNG: 2048x2048 px (300 DPI Print Ready)
 Formate: Vektor SVG + Raster PNG
 Enthaltene Sprachen: DE, EN, FR, NL, CZ`

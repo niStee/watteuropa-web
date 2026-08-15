@@ -128,3 +128,16 @@ Anschließend im Browser unter `http://localhost:8080` aufrufen.
 ### 3. GitHub Pages / GitLab Pages
 
 - In den Repository-Einstellungen unter **Pages** die Quelle auf Branch `main` und Root `/` stellen.
+
+---
+
+## ⚖️ Lizenz, Urheberrecht & Unabhängigkeit
+
+- **Software & Quellcode (FOSS):**  
+  Der gesamte Programmcode (HTML, CSS, JavaScript, Slogan-Generator-Logik, CI/CD-Pipelines und Test-Suiten) steht unter der freien **[MIT-Lizenz](LICENSE)**.
+
+- **Künstlerische Werke, Medien & Exponate (Copyright Josef Tieber):**  
+  Alle künstlerischen Inhalte, kinetischen Skulpturen (*Hohe Europäische Rösser HER2a*), grafischen Ausarbeitungen, Exponat-Inlets (*201 DE 3, 201 EN 3, 201 FR 3, 201 NL 3, 201 CZ 4, 105 DE*), Druck-PDFs und Videoaufnahmen unterliegen dem alleinigen **Urheberrecht von Josef Tieber (WATT European Art)**. Alle Rechte vorbehalten.
+
+- **Projekt-Unabhängigkeit:**  
+  *WATT / Nationalfreie Tage* ist ein eigenständiges Kunst- und Gesellschaftsprojekt von Josef Tieber und stellt kein offizielles Projekt oder Parteiorgan von Volt Europa dar.

@@ -4,15 +4,15 @@
  * multilingual presets, print sheet layout, and standalone zip packaging.
  */
 
-// Official Volt / WATT Brand Color Themes
+// WATT European Art Color Themes
 export const COLOR_THEMES = {
   purpleOnWhite: {
     id: 'purpleOnWhite',
-    name: 'Volt Purple on White',
+    name: 'Deep Violet on White',
     bg: '#ffffff',
     primary: '#502379',
     secondary: '#562881',
-    accent: '#ffcc00', // EU Gold
+    accent: '#ffcc00', // Gold
     border: '#502379',
     cutLine: '#b5a4cf',
     textMain: '#502379',
@@ -21,11 +21,11 @@ export const COLOR_THEMES = {
   },
   whiteOnPurple: {
     id: 'whiteOnPurple',
-    name: 'White on Volt Deep Violet',
+    name: 'White on Deep Violet',
     bg: '#502379',
     primary: '#ffffff',
     secondary: '#f3e8ff',
-    accent: '#ffcc00', // EU Gold
+    accent: '#ffcc00', // Gold
     border: '#ffffff',
     cutLine: '#9475bd',
     textMain: '#ffffff',
