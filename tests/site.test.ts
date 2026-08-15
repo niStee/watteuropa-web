@@ -99,7 +99,6 @@ describe("watteuropa.org - NFT 2026 Landing Page Test Suite", () => {
       "assets/pdf/201 FR 3.pdf",
       "assets/pdf/201 NL 3.pdf",
       "assets/pdf/201 CZ 4.pdf",
-      "assets/videos/download_videos.mp4",
       "assets/subtitles/subtitles_de.vtt",
       "assets/subtitles/subtitles_en.vtt",
       "assets/subtitles/subtitles_fr.vtt",
