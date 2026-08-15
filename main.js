@@ -182,7 +182,6 @@ const UI_TRANSLATIONS = {
     videoTabTv: 'TV Version (2:30 min)',
     videoTabDay1: 'Tag 1: Political Evolution',
     videoTabDay2: 'Tag 2: Schengen² & Zukunft',
-    videoTabLocal: 'WATT Archiv Video (Untertitel)',
     transcriptTitle: 'Interaktives Rede-Transkript (Klicken zum Anspringen)',
     transcriptSub: 'Synchronisiert in 5 Sprachen',
 
@@ -287,7 +286,6 @@ const UI_TRANSLATIONS = {
     videoTabTv: 'TV Version (2:30 min)',
     videoTabDay1: 'Day 1: Political Evolution',
     videoTabDay2: 'Day 2: Schengen² & Future',
-    videoTabLocal: 'WATT Archive Video (Subtitles)',
     transcriptTitle: 'Interactive Speech Transcript (Click to seek)',
     transcriptSub: 'Synchronized in 5 languages',
 
@@ -392,7 +390,6 @@ const UI_TRANSLATIONS = {
     videoTabTv: 'Version TV (2:30 min)',
     videoTabDay1: 'Jour 1: Political Evolution',
     videoTabDay2: 'Jour 2: Schengen² & Avenir',
-    videoTabLocal: 'Archive WATT (Sous-titres)',
     transcriptTitle: 'Transcription Interactive du Discours',
     transcriptSub: 'Synchronisée en 5 langues',
 
@@ -497,7 +494,6 @@ const UI_TRANSLATIONS = {
     videoTabTv: 'TV Versie (2:30 min)',
     videoTabDay1: 'Dag 1: Political Evolution',
     videoTabDay2: 'Dag 2: Schengen² & Toekomst',
-    videoTabLocal: 'WATT Archief Video (Ondertitels)',
     transcriptTitle: 'Interactief Spraaktranscript (Klik om te springen)',
     transcriptSub: 'Gesynchroniseerd in 5 talen',
 
@@ -602,7 +598,6 @@ const UI_TRANSLATIONS = {
     videoTabTv: 'Verze TV (2:30 min)',
     videoTabDay1: 'Den 1: Political Evolution',
     videoTabDay2: 'Den 2: Schengen² a Budoucnost',
-    videoTabLocal: 'Archivní Video WATT (Titulky)',
     transcriptTitle: 'Interaktivní Přepis Projevu',
     transcriptSub: 'Synchronizováno v 5 jazycích',
 
