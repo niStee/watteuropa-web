@@ -1,0 +1,19 @@
+{
+  "name": "watteuropa-web",
+  "version": "1.0.0",
+  "description": "NFT 2026 / Nationalfreie Tage Landing Page and Multilingual Web Platform for Josef Tieber & WATT European Art",
+  "scripts": {
+    "test": "bun test",
+    "lint:i18n": "bun test tests/i18n.test.ts",
+    "dev": "bun --serve ."
+  },
+  "keywords": [
+    "watteuropa",
+    "nft2026",
+    "nationalfreie-tage",
+    "volt",
+    "i18n"
+  ],
+  "author": "Josef Tieber / niStee",
+  "license": "MIT"
+}

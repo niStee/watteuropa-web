@@ -57,19 +57,25 @@ watteuropa-web/
 
 ---
 
-## 🧪 Tests ausführen
+## 🧪 Tests & i18n Coverage Linter
 
-Das Projekt verfügt über eine automatisierte Testsuite:
+Das Projekt verfügt über eine vollständige automatisierte Test- und Linter-Suite:
 
 ```bash
+# Alle Tests & Linter ausführen
 bun test
+
+# Spezifischer i18n Übersetzungs-Coverage Linter
+bun run lint:i18n
 ```
 
 Die Tests überprüfen:
-- Vorhandensein aller semantischen Sektionen und SEO-Metadaten
-- Gültigkeit der CSS-Variablen und Responsive-Breakpoints
-- Physische Existenz aller referenzierten PDF-, Bild- und Videodateien
-- Sicherheitsprüfungen (Abwesenheit von Hardcoded Passwörtern / API-Keys)
+- **100% i18n DOM Coverage:** Jedes `data-i18n`-Attribut in `index.html` muss in allen 5 Sprachen (DE, EN, FR, NL, CZ) existieren.
+- **Wörterbuch-Parität & Symmetrie:** Keine fehlenden oder leeren Übersetzungen zwischen den Sprachen.
+- **Vollständigkeit der Transkripte:** Valide Zeitmarken und Texte für alle 5 Sprachversionen.
+- **Gültigkeit der CSS-Variablen & Responsive Breakpoints**
+- **Physische Existenz aller Assets (PDF, Bild, Audio)**
+- **Sicherheitsprüfung:** Keine versehentlich committeten Passwörter oder API-Keys.
 
 ---
 
