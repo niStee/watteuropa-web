@@ -553,6 +553,164 @@
     </div>
   </div>
 
+  <!-- Legal Modal Dialog (Impressum & Datenschutzerklärung) -->
+  <div id="legalModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="legalModalHeading" style="display: none;">
+    <div class="legal-modal-container">
+      <button class="modal-close-btn" onclick="closeLegalModal()" aria-label="Schließen">✕</button>
+      
+      <!-- Modal Header & Tab Switcher -->
+      <div class="legal-modal-header">
+        <div class="legal-tab-nav">
+          <button id="legalTabImpressum" class="legal-tab-btn is-active" onclick="switchLegalTab('impressum')">
+            ⚖️ Impressum (§ 5 DDG &amp; MStV)
+          </button>
+          <button id="legalTabDatenschutz" class="legal-tab-btn" onclick="switchLegalTab('datenschutz')">
+            🛡️ Datenschutzerklärung (DSGVO)
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body (Scrollable Content) -->
+      <div class="legal-modal-body">
+        <!-- Impressum Content -->
+        <div id="legalContentImpressum" class="legal-content-pane">
+          <h3 id="legalModalHeading">Impressum</h3>
+          <p class="legal-lead">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG) und § 18 Abs. 2 Medienstaatsvertrag (MStV)</p>
+          
+          <h4>Diensteanbieter &amp; Verantwortlicher</h4>
+          <p>
+            <strong>Josef Tieber</strong>, Ing. (HTL)<br>
+            WATT European Art • Club der Bunten<br>
+            Jakob-Hoogen-Str. 68<br>
+            D-41844 Wegberg (Deutschland)
+          </p>
+
+          <h4>Kontakt</h4>
+          <p>
+            Telefon: +49 (0) 2434 800 882<br>
+            Mobil: +49 (0) 172 210 81 10<br>
+            E-Mail: <a href="mailto:info@club-der-bunten.de">info@club-der-bunten.de</a><br>
+            Websites: <a href="https://www.watteuropa.org" target="_blank" rel="noopener">www.watteuropa.org</a> • <a href="https://www.club-der-bunten.de" target="_blank" rel="noopener">www.club-der-bunten.de</a>
+          </p>
+
+          <h4>Umsatzsteuer-Identifikationsnummer</h4>
+          <p>
+            USt-IdNr. gemäß § 27 a Umsatzsteuergesetz: <strong>DE 240 640 602</strong>
+          </p>
+
+          <h4>Berufsbezeichnung &amp; Herkunft</h4>
+          <p>
+            Berufsbezeichnung: Ingenieur (Ing. HTL)<br>
+            Verliehen in: Österreich (Höhere Technische Lehranstalt)
+          </p>
+
+          <h4>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h4>
+          <p>
+            Josef Tieber<br>
+            Jakob-Hoogen-Str. 68<br>
+            D-41844 Wegberg
+          </p>
+
+          <h4>Urheberrecht &amp; Verwertungsrechte (Copyright Josef Tieber)</h4>
+          <p>
+            Die durch den Seitenbetreiber erstellten künstlerischen Inhalte und Werke auf diesen Seiten (insbesondere die Konzeption der <em>Nationalfreien Tage</em>, die kinetischen Skulpturen <em>Hohe Europäische Rösser HER2a</em>, die Exponat-Inlets <em>201 DE/EN/FR/NL/CZ</em>, Druck-PDFs sowie die filmischen Dokumentationen) unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der vorherigen schriftlichen Zustimmung von Josef Tieber (WATT European Art).
+          </p>
+          <p>
+            Der Quellcode der Webanwendung und des Slogan-Generators steht unter der freien MIT-Lizenz (Open Source Software).
+          </p>
+
+          <h4>Hinweis zur Projekt-Unabhängigkeit</h4>
+          <p>
+            <em>WATT / Nationalfreie Tage</em> ist ein freies, eigenständiges Kunst- und Gesellschaftsprojekt von Josef Tieber und stellt kein offizielles Parteiprojekt oder Organ von Volt Europa dar.
+          </p>
+
+          <h4>Haftung für Inhalte und Links</h4>
+          <p>
+            Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+          </p>
+          <p>
+            Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+          </p>
+        </div>
+
+        <!-- Datenschutz Content -->
+        <div id="legalContentDatenschutz" class="legal-content-pane" style="display: none;">
+          <h3>Datenschutzerklärung</h3>
+          <p class="legal-lead">Informationen zur Verarbeitung personenbezogener Daten nach Art. 13 &amp; 14 der EU-Datenschutz-Grundverordnung (DSGVO)</p>
+
+          <h4>1. Datenschutz auf einen Blick</h4>
+          <p>
+            Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Webseite ist nach dem Prinzip der <strong>Datensparsamkeit</strong> und <strong>Privacy-First</strong> aufgebaut:
+          </p>
+          <ul>
+            <li>❌ <strong>Keine Tracking-Cookies</strong> (kein Google Analytics, keine Werbenetzwerke, keine Profilbildung).</li>
+            <li>❌ <strong>Kein Cookie-Banner erforderlich</strong>, da keine einwilligungspflichtigen Drittanbieter-Cookies gesetzt werden.</li>
+            <li>✅ <strong>Verschlüsselte Übertragung</strong> (HTTPS / TLS).</li>
+          </ul>
+
+          <h4>2. Name und Anschrift des Verantwortlichen</h4>
+          <p>
+            Verantwortlicher im Sinne der DSGVO ist:<br>
+            <strong>Josef Tieber</strong>, Ing. (HTL)<br>
+            Jakob-Hoogen-Str. 68, D-41844 Wegberg<br>
+            Telefon: +49 (0) 2434 800 882<br>
+            E-Mail: <a href="mailto:info@club-der-bunten.de">info@club-der-bunten.de</a>
+          </p>
+
+          <h4>3. Bereitstellung der Website und Server-Logfiles</h4>
+          <p>
+            Beim Aufrufen unserer Website werden durch den Webserver (Hosting-Provider United Domains / GitHub Pages CDN) automatisch Informationen erhoben und temporär in sogenannten Server-Logfiles gespeichert. Dies umfasst:
+          </p>
+          <ul>
+            <li>Browsertyp und Browserversion</li>
+            <li>Verwendetes Betriebssystem</li>
+            <li>Referrer URL (zuvor besuchte Seite)</li>
+            <li>Hostname des zugreifenden Rechners (IP-Adresse anonymisiert / gekürzt)</li>
+            <li>Uhrzeit der Serveranfrage</li>
+          </ul>
+          <p>
+            Die Verarbeitung erfolgt auf Grundlage von <strong>Art. 6 Abs. 1 lit. f DSGVO</strong> zur Wahrung unseres berechtigten Interesses an einem stabilen, performanten und sicheren Betrieb der Webanwendung sowie zur Abwehr von Cyberangriffen. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
+          </p>
+
+          <h4>4. Eingebettete YouTube-Videos (Erweiterter Datenschutzmodus)</h4>
+          <p>
+            Auf unserer Website sind Videos der Plattform YouTube eingebunden. Betreiber der Seiten ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.
+          </p>
+          <p>
+            Wir nutzen YouTube im <strong>erweiterten Datenschutzmodus (Domain: youtube-nocookie.com)</strong>. Laut YouTube speichert dieser Modus keine Cookies über die Besucher unserer Website, bevor das Video aktiv abgespielt wird. Beim Starten eines Videos wird eine Verbindung zu den Servern von YouTube hergestellt, wodurch YouTube mitgeteilt wird, welche Seite Sie besuchen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (Interesse an einer ansprechenden Darstellung unseres Kunstprojekts).
+          </p>
+
+          <h4>5. Externe Schriftarten (Google Fonts)</h4>
+          <p>
+            Diese Seite nutzt zur einheitlichen und ansprechenden Darstellung von Schriftarten Web Fonts von Google (Google Ireland Limited). Beim Aufruf einer Seite lädt Ihr Browser die benötigten Web Fonts in ihren Browsercache. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.
+          </p>
+
+          <h4>6. Kontaktaufnahme per E-Mail oder Telefon</h4>
+          <p>
+            Wenn Sie per E-Mail oder telefonisch Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten (z. B. Name, E-Mail-Adresse, Inhalt der Nachricht) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Rechtsgrundlage ist <strong>Art. 6 Abs. 1 lit. b DSGVO</strong> (vorvertragliche Maßnahmen) bzw. <strong>Art. 6 Abs. 1 lit. f DSGVO</strong> (berechtigtes Interesse an der Beantwortung Ihres Anliegens). Diese Daten geben wir niemals ohne Ihre Einwilligung an Dritte weiter.
+          </p>
+
+          <h4>7. Ihre Rechte als betroffene Person</h4>
+          <p>
+            Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf:
+          </p>
+          <ul>
+            <li><strong>Auskunft (Art. 15 DSGVO)</strong> über Ihre bei uns gespeicherten personenbezogenen Daten,</li>
+            <li><strong>Berichtigung (Art. 16 DSGVO)</strong> unrichtiger Daten,</li>
+            <li><strong>Löschung (Art. 17 DSGVO)</strong> Ihrer bei uns gespeicherten Daten,</li>
+            <li><strong>Einschränkung der Datenverarbeitung (Art. 18 DSGVO)</strong>,</li>
+            <li><strong>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</strong>,</li>
+            <li><strong>Beschwerderecht (Art. 77 DSGVO)</strong> bei einer Datenschutz-Aufsichtsbehörde (z. B. Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen – LDI NRW).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="legal-modal-footer">
+        <button class="btn btn-secondary" onclick="closeLegalModal()">Schließen</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Site Footer & Impressum -->
   <footer class="site-footer" id="impressum">
     <div class="container">
@@ -577,33 +735,50 @@
             <li><a href="#hero" data-i18n="nav_nft">Nationalfreie Tage 2026</a></li>
             <li><a href="#inlets" data-i18n="nav_inlets">Inlets (5 Sprachen)</a></li>
             <li><a href="#videos" data-i18n="nav_videos">Video-Dokumentation</a></li>
-            <li><a href="#about" data-i18n="nav_about">Hohe Rösser & HER2a</a></li>
-            <li><a href="#mitmachen" data-i18n="nav_participate">Mitmachen & Aktionen</a></li>
+            <li><a href="#about" data-i18n="nav_about">Hohe Rösser &amp; HER2a</a></li>
+            <li><a href="#mitmachen" data-i18n="nav_participate">Mitmachen &amp; Aktionen</a></li>
             <li><a href="#prague2027" data-i18n="pragueBadge">Ausblick Prag 2027</a></li>
           </ul>
         </div>
 
         <!-- Contact & Legal Impressum -->
         <div class="footer-col">
-          <h5 data-i18n="footerContactTitle">Impressum & Kontakt</h5>
+          <h5 data-i18n="footerContactTitle">Impressum &amp; Kontakt</h5>
           <div class="contact-card">
             <strong>Josef Tieber, Ing. (HTL)</strong>
+            <span style="font-size: 0.8125rem; color: rgba(255, 255, 255, 0.7); display: block;">WATT European Art • Club der Bunten</span>
             <span>Jakob-Hoogen-Str. 68</span><br>
             <span>D-41844 Wegberg</span><br>
+            <span style="display: block; margin-top: 0.35rem; font-size: 0.8125rem; color: rgba(255, 255, 255, 0.8);">
+              USt-IdNr.: DE 240 640 602
+            </span>
             <span style="display: block; margin-top: 0.5rem;">
-              Fon: +49 02434 800 882<br>
-              Mobil: +49 0172 210 81 10
+              Fon: +49 (0) 2434 800 882<br>
+              Mobil: +49 (0) 172 210 81 10
             </span>
             <span style="display: block; margin-top: 0.5rem;">
               E-Mail: <a href="mailto:info@club-der-bunten.de" style="color: #ffffff; text-decoration: underline;">info@club-der-bunten.de</a>
             </span>
+            
+            <!-- Quick Legal Buttons -->
+            <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <button type="button" class="btn btn-outline btn-sm" onclick="openLegalModal('impressum')" style="color: #ffffff; border-color: rgba(255,255,255,0.4); font-size: 0.75rem; padding: 0.35rem 0.65rem; border-radius: var(--radius-sm);">
+                ⚖️ Impressum (§ 5 DDG)
+              </button>
+              <button type="button" class="btn btn-outline btn-sm" onclick="openLegalModal('datenschutz')" style="color: #ffffff; border-color: rgba(255,255,255,0.4); font-size: 0.75rem; padding: 0.35rem 0.65rem; border-radius: var(--radius-sm);">
+                🛡️ Datenschutz (DSGVO)
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
         <span data-i18n="footerBottomCopy">&copy; 2026 WATT European Art • Josef Tieber • watteuropa.org</span>
-        <span>Statisches Web-Landingpage • Bereit für United Domains / Netlify / GitHub Pages</span>
+        <span>
+          <a href="javascript:void(0)" onclick="openLegalModal('impressum')" style="color: inherit; text-decoration: underline;">Impressum (§ 5 DDG)</a> • 
+          <a href="javascript:void(0)" onclick="openLegalModal('datenschutz')" style="color: inherit; text-decoration: underline;">Datenschutz (DSGVO)</a>
+        </span>
       </div>
     </div>
   </footer>

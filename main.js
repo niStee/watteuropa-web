@@ -919,10 +919,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeInletModal();
+      closeLegalModal();
     }
   });
 
-  // Close modal on background click
+  // Close modals on background click
   const modalBackdrop = document.getElementById('inletModal');
   modalBackdrop?.addEventListener('click', (e) => {
     if (e.target === modalBackdrop) {
@@ -930,14 +931,76 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const legalModalBackdrop = document.getElementById('legalModal');
+  legalModalBackdrop?.addEventListener('click', (e) => {
+    if (e.target === legalModalBackdrop) {
+      closeLegalModal();
+    }
+  });
+
   // Initial render of transcript
   renderTranscript('de');
 });
 
+/**
+ * Open Legal Modal (Impressum / Datenschutz)
+ */
+function openLegalModal(tab = 'impressum') {
+  const modal = document.getElementById('legalModal');
+  if (!modal) return;
+  modal.style.display = 'flex';
+  setTimeout(() => {
+    modal.classList.add('is-active');
+  }, 10);
+  document.body.style.overflow = 'hidden';
+  switchLegalTab(tab);
+}
+
+/**
+ * Close Legal Modal
+ */
+function closeLegalModal() {
+  const modal = document.getElementById('legalModal');
+  if (!modal) return;
+  modal.classList.remove('is-active');
+  setTimeout(() => {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }, 250);
+}
+
+/**
+ * Switch Legal Modal Tab (impressum / datenschutz)
+ */
+function switchLegalTab(tabName) {
+  const tabImp = document.getElementById('legalTabImpressum');
+  const tabDat = document.getElementById('legalTabDatenschutz');
+  const paneImp = document.getElementById('legalContentImpressum');
+  const paneDat = document.getElementById('legalContentDatenschutz');
+
+  if (!tabImp || !tabDat || !paneImp || !paneDat) return;
+
+  if (tabName === 'datenschutz') {
+    tabImp.classList.remove('is-active');
+    tabDat.classList.add('is-active');
+    paneImp.style.display = 'none';
+    paneDat.style.display = 'block';
+  } else {
+    tabImp.classList.add('is-active');
+    tabDat.classList.remove('is-active');
+    paneImp.style.display = 'block';
+    paneDat.style.display = 'none';
+  }
+}
+
 // Export functions to global scope for HTML inline handlers
 window.openInletModal = openInletModal;
 window.closeInletModal = closeInletModal;
+window.openLegalModal = openLegalModal;
+window.closeLegalModal = closeLegalModal;
+window.switchLegalTab = switchLegalTab;
 window.switchVideoTab = switchVideoTab;
 window.switchSubtitle = switchSubtitle;
 window.switchLanguage = switchLanguage;
 window.seekVideo = seekVideo;
+

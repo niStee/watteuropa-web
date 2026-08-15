@@ -78,12 +78,17 @@ describe("watteuropa.org - NFT 2026 Landing Page Test Suite", () => {
     expect(html).toContain("Prag 2027");
     expect(html).toContain("Dny Bez Národnosti");
 
-    // 6. Impressum & Contact
+    // 6. Impressum & Contact (DDG & DSGVO Compliance)
     expect(html).toContain('id="impressum"');
     expect(html).toContain("Josef Tieber");
-    expect(html).toContain("Jakob");
+    expect(html).toContain("Jakob-Hoogen-Str. 68");
     expect(html).toContain("41844 Wegberg");
     expect(html).toContain("info@club-der-bunten.de");
+    expect(html).toContain("DE 240 640 602");
+    expect(html).toContain("§ 5 DDG");
+    expect(html).toContain('id="legalModal"');
+    expect(html).toContain('id="legalContentImpressum"');
+    expect(html).toContain('id="legalContentDatenschutz"');
   });
 
   test("Asset verification on disk & valid sizes", () => {
