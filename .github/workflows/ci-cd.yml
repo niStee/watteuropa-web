@@ -1,0 +1,82 @@
+name: CI/CD Pipeline - Test, Lint & Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry Run (Test connection without uploading files)'
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ==========================================
+  # Stage 1: Quality Gate (Bun Tests & i18n Lint)
+  # ==========================================
+  test-and-lint:
+    name: Test & i18n Coverage Linter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun Environment
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Run Full Test Suite
+        run: bun test
+
+      - name: Run i18n Translation Coverage Linter
+        run: bun run lint:i18n
+
+  # ==========================================
+  # Stage 2: Deploy to United Domains Webspace
+  # ==========================================
+  deploy-united-domains:
+    name: Deploy to United Domains (Webspace / FTPS)
+    needs: [ test-and-lint ]
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Check for United Domains Credentials
+        id: check-secrets
+        run: |
+          if [ -z "${{ secrets.UNITED_DOMAINS_HOST }}" ] || [ -z "${{ secrets.UNITED_DOMAINS_USER }}" ] || [ -z "${{ secrets.UNITED_DOMAINS_PASSWORD }}" ]; then
+            echo "configured=false" >> $GITHUB_OUTPUT
+            echo "::notice title=United Domains Secrets Missing::FTP/SFTP credentials (UNITED_DOMAINS_HOST, UNITED_DOMAINS_USER, UNITED_DOMAINS_PASSWORD) are not yet configured in GitHub Secrets. Skipping Webspace upload."
+          else
+            echo "configured=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Deploy to Webspace via FTPS (TLS)
+        if: steps.check-secrets.outputs.configured == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.UNITED_DOMAINS_HOST }}
+          username: ${{ secrets.UNITED_DOMAINS_USER }}
+          password: ${{ secrets.UNITED_DOMAINS_PASSWORD }}
+          port: ${{ secrets.UNITED_DOMAINS_PORT || 21 }}
+          protocol: ftps
+          server-dir: ${{ secrets.UNITED_DOMAINS_TARGET_DIR || '/htdocs/' }}
+          dry-run: ${{ inputs.dry_run || false }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/tests/**
+            **/node_modules/**
+            package.json
+            README.md
+            DEPLOYMENT.md
