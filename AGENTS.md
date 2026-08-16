@@ -1,6 +1,8 @@
 # AGENTS.md — watteuropa-web
 
 > Parent: [~/AGENTS.md](../../AGENTS.md) — environment-wide context (LiteLLM proxy, git identity, toolchains).
+> Primary Repo: `niStee/watteuropa-web` on GitHub (public) · EU Mirror: `niStee/watteuropa-web` on Codeberg (private)
+> Security Policy: [SECURITY.md](file:///home/nils/Projects/watteuropa-web/SECURITY.md) · Code License: MIT · Media License: © Josef Tieber
 
 Official web landing page and interactive circular slogan/inlet generator for **WATT European Art • Nationalfreie Tage (NFT 2026)** by **Josef Tieber (Ing. HTL)**.
 
