@@ -2,11 +2,12 @@
 
 <p align="left">
   <a href="https://nistee.github.io/watteuropa-web/"><img src="https://img.shields.io/badge/Live_Prototype-watteuropa.org-502379?style=flat&logo=safari&logoColor=white" alt="Live Prototype"></a>
+  <a href="https://github.com/niStee/watteuropa-web/releases"><img src="https://img.shields.io/github/v/release/niStee/watteuropa-web?style=flat&logo=github&color=blue" alt="Latest Release"></a>
   <a href="https://github.com/niStee/watteuropa-web/actions/workflows/ci-cd.yml"><img src="https://github.com/niStee/watteuropa-web/actions/workflows/ci-cd.yml/badge.svg?branch=main" alt="CI/CD Pipeline"></a>
-  <a href="https://github.com/niStee/watteuropa-web/actions/workflows/scorecard.yml"><img src="https://github.com/niStee/watteuropa-web/actions/workflows/scorecard.yml/badge.svg?branch=main" alt="OpenSSF Scorecard CI"></a>
   <a href="https://scorecard.dev/viewer/?uri=github.com/niStee/watteuropa-web"><img src="https://api.scorecard.dev/projects/github.com/niStee/watteuropa-web/badge" alt="OpenSSF Scorecard"></a>
   <a href="https://bun.sh"><img src="https://img.shields.io/badge/Runtime-Bun%20v1.3+-fbf0df?style=flat&logo=bun&logoColor=black" alt="Bun Runtime"></a>
   <a href="tests/i18n.test.ts"><img src="https://img.shields.io/badge/i18n-100%25%20(DE%20%7C%20EN%20%7C%20FR%20%7C%20NL%20%7C%20CZ)-success.svg?style=flat" alt="i18n Coverage"></a>
+  <a href="https://codeberg.org/niStee/watteuropa-web"><img src="https://img.shields.io/badge/Mirror-Codeberg-2185d0?style=flat&logo=codeberg&logoColor=white" alt="Codeberg Mirror"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/Code_License-MIT-blue.svg?style=flat" alt="Code License: MIT"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/Artworks-%C2%A9_Josef_Tieber-502379.svg?style=flat" alt="Artworks Copyright"></a>
   <a href="DEPLOYMENT.md"><img src="https://img.shields.io/badge/Deploy-United_Domains-ff6600.svg?style=flat&logo=serverfault&logoColor=white" alt="United Domains Deploy"></a>
