@@ -62,12 +62,10 @@ jobs:
         run: |
           axe http://localhost:8080 \
             --tags wcag2a,wcag2aa,wcag21a,wcag21aa \
-            --reporter cli \
             --exit
       - name: Run axe audit – Generator page
         run: |
           axe http://localhost:8080/generator/index.html \
             --tags wcag2a,wcag2aa,wcag21a,wcag21aa \
-            --reporter cli \
             --exit
         continue-on-error: true
