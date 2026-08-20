@@ -70,6 +70,7 @@ watteuropa-web/
 ├── .github/
 │   └── workflows/
 │       ├── ci-cd.yml           # CI/CD Test & Automated United Domains FTPS Deploy
+│       ├── a11y.yml            # W3C HTML5/CSS & axe-core WCAG 2.1 AA Accessibility Validation
 │       └── scorecard.yml       # OpenSSF Scorecard Supply-Chain Security
 ├── CONTRIBUTING.md             # Entwicklungs- & Mitwirkungs-Leitfaden
 ├── SECURITY.md                 # Sicherheitsrichtlinie & Coordinated Disclosure
@@ -81,7 +82,7 @@ watteuropa-web/
 
 ## 🧪 Tests & Quality Gates
 
-Das Projekt verwendet [Bun](https://bun.sh) als Test-Runner und i18n-Linter:
+Das Projekt verwendet [Bun](https://bun.sh) als Test-Runner und i18n-Linter sowie automatisierte W3C/A11y-Audits in CI:
 
 ```bash
 # Alle Tests ausführen (Struktur, Barrierefreiheit, Assets, Subtitles, Security)
@@ -94,15 +95,13 @@ bun run lint:i18n
 bun run dev
 ```
 
----
-
-## 🚀 Deployment & CI/CD Pipeline
-
-Das Deployment ist über GitHub Actions automatisiert. Siehe ausführliche Anleitung in **[`DEPLOYMENT.md`](DEPLOYMENT.md)**.
-
-1. **Stufe 1 (Quality Gate):** Jeder Push führt `bun test` und `bun run lint:i18n` aus.
-2. **Stufe 2 (United Domains Webspace Upload):** Bei Vorhandensein der GitHub Secrets (`UNITED_DOMAINS_HOST`, `UNITED_DOMAINS_USER`, `UNITED_DOMAINS_PASSWORD`) wird die Website automatisch verschlüsselt per FTPS auf den Webspace hochgeladen.
-3. **Alternative (DNS CNAME):** Aufschaltung der Domain `watteuropa.org` direkt auf das weltweite CDN von GitHub Pages.
+### Automatisierte CI/CD Quality Gates (`.github/workflows/`)
+1. **Quality Gate (`ci-cd.yml`):** Jeder Push führt `bun test` und `bun run lint:i18n` aus.
+2. **Barrierefreiheit & Validierung (`a11y.yml`):**
+   * **W3C HTML5 & CSS Validator**: Validiert strikte W3C-Standards auf `index.html` und `generator/index.html`.
+   * **Axe-Core Accessibility Audit**: Prüft WCAG 2.1 AA Konformität automatisiert auf Chromium Headless.
+3. **Deployment (United Domains Webspace):** Bei Vorhandensein der GitHub Secrets (`UNITED_DOMAINS_HOST`, `UNITED_DOMAINS_USER`, `UNITED_DOMAINS_PASSWORD`) wird die Website automatisch per FTPS hochgeladen.
+4. **Alternative (DNS CNAME):** Aufschaltung der Domain `watteuropa.org` direkt auf das weltweite CDN von GitHub Pages.
 
 ---
 
