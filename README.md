@@ -24,12 +24,14 @@ Offizielle, moderne Web-Landingpage und interaktiver Slogan-Generator für das e
   - Kreisrunde Exponat-Grafiken (*201 DE 3, 201 EN 3, 201 FR 3, 201 NL 3, 201 CZ 4*).
   - Interaktive Lightbox mit hochauflösender Detailansicht und Übersetzungen.
   - Direkte Download-Buttons für druckfertige A4-PDF-Vorlagen.
-- **4 Offizielle Video-Dokumentationen (YouTube)**:
+- **4 Offizielle Video-Dokumentationen (YouTube • 2-Click Poster-Fassade)**:
+  - **Datenschutz & Minimal-Traffic**: Initial werden nur lokale, optimierte Poster-Bilder geladen (spart >95% initialen Traffic und blockiert Google-Tracking vor Interaktion).
   - **Tag 1: Political Evolution** (`bjQgVwqIg44`)
   - **Tag 2: Schengen² & Netze** (`dTHp3CdKcmM`)
   - **Tag 3: Abschlusskundgebung Wegberg** (`A7CWUPn2YEY` • *Standard aktiv*)
   - **TV-Version (Framebuilder Media Edit • 2:30 min)** (`wrHgyR6Z_-I`)
   - **Interaktive Speech Transcripts**: Vollständig synchronisiert in allen 5 Sprachen mit anspringbaren Zeitmarken.
+- **Lokales Font-Self-Hosting (Zero-External-Network)**: Alle Schriftarten (Inter, Outfit, Montserrat, Oswald, Roboto Condensed, Cinzel) liegen als schlanke, Latin-subsettete `.woff2`-Dateien im Repository.
 - **Kinetische Skulptur (*HER2a*) & Historische Exponate**: Erklärung der 28 rotierenden Nationalstaaten um den Erdmittelpunkt (Völkerrecht & Europarecht).
 - **Ausblick Prag 2027**: Vorankündigung der 4. Ausgabe (*Dny Bez Národnosti*).
 - **Rechtliches Modal**: Vollständiges Impressum (§ 5 DDG, § 18 MStV) und DSGVO-Datenschutzerklärung.
@@ -39,7 +41,7 @@ Offizielle, moderne Web-Landingpage und interaktiver Slogan-Generator für das e
 - **Mehrsprachige Presets**: Vorkonfigurierte Slogans für alle 5 Sprachen (DE, EN, FR, NL, CZ).
 - **Farbthemen & Typografie**: WATT Deep Violet, White on Violet, Dark Inverted, Gold/Accent sowie dynamische Schriftarten (Montserrat, Inter, Oswald, Roboto Condensed).
 - **Druck & Export**:
-  - Hochauflösendes PNG (2048x2048 px, **300 DPI druckfertig**).
+  - Hochauflösendes PNG (2048x2048 px, **300 DPI druckfertig** mit `document.fonts.ready` Race-Condition-Schutz).
   - Vektor-SVG.
   - A4-Druckbogen (2x2 / 3x2 Raster mit Schnittmarken).
   - Standalone-ZIP-Pakete für alle Sprachvarianten.
@@ -52,14 +54,17 @@ Offizielle, moderne Web-Landingpage und interaktiver Slogan-Generator für das e
 watteuropa-web/
 ├── index.html                  # Semantisches, barrierefreies HTML5 (Landingpage)
 ├── style.css                   # Modernes Vanilla-CSS-Designsystem (WATT Deep Violet #502379)
-├── main.js                     # Vanilla JS (Sprachwechsler, Video-Tabs, Modals, Transkripte)
+├── main.js                     # Vanilla JS mit strikten JSDoc-Typen (@ts-check)
+├── tsconfig.json               # Zero-Build TypeScript Configuration (checkJs: true, noEmit: true)
 ├── generator/                  # Standalone Slogan & Inlet Generator
 │   ├── index.html              # Generator UI
 │   ├── style.css               # Generator Design System
-│   ├── app.js                  # Generator Controller & Event Engine
+│   ├── app.js                  # Generator Controller mit JSDoc-Typen
 │   └── generator-core.js       # Vektor-Mathematik, Presets, SVG/ZIP Exporter
 ├── assets/
+│   ├── fonts/                  # Lokale WOFF2-Fonts (Inter, Outfit, Montserrat, Oswald, etc.)
 │   ├── img/                    # Logos, Fotos & Kontakt-Grafiken
+│   │   └── video-posters/      # Lokale Thumbnails für 2-Click YouTube Facade
 │   ├── inlets/                 # 5 hochauflösende & optimierte Inlet-Grafiken (DE, EN, FR, NL, CZ)
 │   ├── pdf/                    # 5 Original A4-Druck-PDFs
 │   └── subtitles/              # WebVTT (.vtt) & SRT (.srt) in 5 Sprachen
@@ -81,11 +86,14 @@ watteuropa-web/
 
 ## 🧪 Tests & Quality Gates
 
-Das Projekt verwendet [Bun](https://bun.sh) als Test-Runner und i18n-Linter sowie automatisierte W3C/A11y-Audits in CI:
+Das Projekt verwendet [Bun](https://bun.sh) als Test-Runner, i18n-Linter und TypeScript-Typechecker sowie automatisierte W3C/A11y-Audits in CI:
 
 ```bash
-# Alle Tests ausführen (Struktur, Barrierefreiheit, Assets, Subtitles, Security)
+# Alle Tests ausführen (Struktur, Barrierefreiheit, Assets, Subtitles, Security & TypeScript Typecheck)
 bun test
+
+# Strikten Zero-Build TypeScript Typecheck separat ausführen
+bun run typecheck
 
 # 100% i18n Übersetzungs-Coverage Linter ausführen
 bun run lint:i18n
@@ -95,7 +103,7 @@ bun run dev
 ```
 
 ### Automatisierte CI/CD Quality Gates (`.github/workflows/`)
-1. **Quality Gate (`ci-cd.yml`):** Jeder Push führt `bun test` und `bun run lint:i18n` aus.
+1. **Quality Gate (`ci-cd.yml`):** Jeder Push führt `bun run test` (inkl. `tsc --noEmit`) und `bun run lint:i18n` aus.
 2. **Barrierefreiheit & Validierung (`a11y.yml`):**
    * **W3C HTML5 & CSS Validator**: Validiert strikte W3C-Standards auf `index.html` und `generator/index.html`.
    * **Axe-Core Accessibility Audit**: Prüft WCAG 2.1 AA Konformität automatisiert auf Chromium Headless.
