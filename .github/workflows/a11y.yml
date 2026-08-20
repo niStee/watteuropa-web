@@ -33,9 +33,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: Cyb3r-Jak3/html5validator-action@41633d488eb36e18fd1a95ffc83daf1bf22a75bd # v7.2.0
         with:
-          target: |
-            index.html
-            generator/index.html
+          root: .
           css: true
           extra: '--errors-only'
 
@@ -56,10 +54,8 @@ jobs:
         run: |
           npm install -g @axe-core/cli
           npx playwright install --with-deps chromium
-      - name: Serve site with Bun
-        run: bun --serve . &
-        env:
-          PORT: 8080
+      - name: Start HTTP server
+        run: nohup python3 -m http.server 8080 >/dev/null 2>&1 &
       - name: Wait for server
         run: npx wait-on http://localhost:8080 --timeout 15000
       - name: Run axe audit – Main page
