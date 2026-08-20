@@ -1,3 +1,4 @@
+// @ts-check
 /**
  * WATT Slogan / Circular Inlet Generator - Interactive Controller & UI Engine
  * Developed for Josef Tieber & the WATT European Art Team
@@ -25,53 +26,53 @@ const state = {
 // DOM Elements Cache
 const dom = {
   // Tabs & Views
-  tabBtnSingle: document.getElementById('tabBtnSingle'),
-  tabBtnSheet: document.getElementById('tabBtnSheet'),
-  tabBtnBatch: document.getElementById('tabBtnBatch'),
+  tabBtnSingle: /** @type {HTMLButtonElement} */ (document.getElementById('tabBtnSingle')),
+  tabBtnSheet: /** @type {HTMLButtonElement} */ (document.getElementById('tabBtnSheet')),
+  tabBtnBatch: /** @type {HTMLButtonElement} */ (document.getElementById('tabBtnBatch')),
   singleContainer: document.getElementById('singleBadgeContainer'),
   sheetContainer: document.getElementById('printSheetContainer'),
   batchContainer: document.getElementById('batchMatrixContainer'),
   previewCard: document.getElementById('previewCard'),
-  selectSheetLayout: document.getElementById('selectSheetLayout'),
+  selectSheetLayout: /** @type {HTMLSelectElement} */ (document.getElementById('selectSheetLayout')),
 
   // Language & Presets
   languageSelector: document.getElementById('languageSelector'),
   presetList: document.getElementById('presetList'),
 
   // Text Inputs
-  inputTopArc: document.getElementById('inputTopArc'),
-  inputSlogan: document.getElementById('inputSlogan'),
-  inputCenterNumber: document.getElementById('inputCenterNumber'),
-  inputSubtext: document.getElementById('inputSubtext'),
-  inputCatalog: document.getElementById('inputCatalog'),
-  inputBottomArc: document.getElementById('inputBottomArc'),
-  selectFontFamily: document.getElementById('selectFontFamily'),
-  selectSloganWeight: document.getElementById('selectSloganWeight'),
-  toggleUppercase: document.getElementById('toggleUppercase'),
+  inputTopArc: /** @type {HTMLInputElement} */ (document.getElementById('inputTopArc')),
+  inputSlogan: /** @type {HTMLTextAreaElement} */ (document.getElementById('inputSlogan')),
+  inputCenterNumber: /** @type {HTMLInputElement} */ (document.getElementById('inputCenterNumber')),
+  inputSubtext: /** @type {HTMLInputElement} */ (document.getElementById('inputSubtext')),
+  inputCatalog: /** @type {HTMLInputElement} */ (document.getElementById('inputCatalog')),
+  inputBottomArc: /** @type {HTMLInputElement} */ (document.getElementById('inputBottomArc')),
+  selectFontFamily: /** @type {HTMLSelectElement} */ (document.getElementById('selectFontFamily')),
+  selectSloganWeight: /** @type {HTMLSelectElement} */ (document.getElementById('selectSloganWeight')),
+  toggleUppercase: /** @type {HTMLInputElement} */ (document.getElementById('toggleUppercase')),
 
   // Sliders
-  sliderSloganFontSize: document.getElementById('sliderSloganFontSize'),
+  sliderSloganFontSize: /** @type {HTMLInputElement} */ (document.getElementById('sliderSloganFontSize')),
   labelSloganFontSize: document.getElementById('labelSloganFontSize'),
-  sliderArcFontSize: document.getElementById('sliderArcFontSize'),
+  sliderArcFontSize: /** @type {HTMLInputElement} */ (document.getElementById('sliderArcFontSize')),
   labelArcFontSize: document.getElementById('labelArcFontSize'),
-  sliderBorderWidth: document.getElementById('sliderBorderWidth'),
+  sliderBorderWidth: /** @type {HTMLInputElement} */ (document.getElementById('sliderBorderWidth')),
   labelBorderWidth: document.getElementById('labelBorderWidth'),
 
   // Themes & Colors
   themeGrid: document.getElementById('themeGrid'),
   customColorContainer: document.getElementById('customColorContainer'),
-  colorBg: document.getElementById('colorBg'),
-  colorPrimary: document.getElementById('colorPrimary'),
-  colorAccent: document.getElementById('colorAccent'),
-  colorBorder: document.getElementById('colorBorder'),
-  colorCutLine: document.getElementById('colorCutLine'),
+  colorBg: /** @type {HTMLInputElement} */ (document.getElementById('colorBg')),
+  colorPrimary: /** @type {HTMLInputElement} */ (document.getElementById('colorPrimary')),
+  colorAccent: /** @type {HTMLInputElement} */ (document.getElementById('colorAccent')),
+  colorBorder: /** @type {HTMLInputElement} */ (document.getElementById('colorBorder')),
+  colorCutLine: /** @type {HTMLInputElement} */ (document.getElementById('colorCutLine')),
 
   // Graphics & Toggles
-  selectStarPosition: document.getElementById('selectStarPosition'),
-  inputDiameter: document.getElementById('inputDiameter'),
-  toggleEmblem: document.getElementById('toggleEmblem'),
-  toggleInnerRings: document.getElementById('toggleInnerRings'),
-  toggleCutLine: document.getElementById('toggleCutLine'),
+  selectStarPosition: /** @type {HTMLSelectElement} */ (document.getElementById('selectStarPosition')),
+  inputDiameter: /** @type {HTMLInputElement} */ (document.getElementById('inputDiameter')),
+  toggleEmblem: /** @type {HTMLInputElement} */ (document.getElementById('toggleEmblem')),
+  toggleInnerRings: /** @type {HTMLInputElement} */ (document.getElementById('toggleInnerRings')),
+  toggleCutLine: /** @type {HTMLInputElement} */ (document.getElementById('toggleCutLine')),
 
   // Action & Export Buttons
   btnCopySvg: document.getElementById('btnCopySvg'),
@@ -82,7 +83,7 @@ const dom = {
   btnExportBatchZipHeader: document.getElementById('btnExportBatchZipHeader'),
   btnToggleBackground: document.getElementById('btnToggleBackground'),
   btnResetConfig: document.getElementById('btnResetConfig'),
-  exportCanvas: document.getElementById('exportCanvas'),
+  exportCanvas: /** @type {HTMLCanvasElement} */ (document.getElementById('exportCanvas')),
   toastContainer: document.getElementById('toastContainer'),
   specDimensions: document.getElementById('specDimensions')
 };
@@ -132,7 +133,8 @@ function initThemes() {
  */
 function selectTheme(themeId) {
   state.config.theme = themeId;
-  document.querySelectorAll('.theme-tile').forEach(el => {
+  document.querySelectorAll('.theme-tile').forEach(tile => {
+    const el = /** @type {HTMLElement} */ (tile);
     el.classList.toggle('active', el.dataset.themeId === themeId);
   });
 
@@ -196,7 +198,8 @@ function selectPreset(presetId) {
  * Highlights active preset item in the DOM list
  */
 function highlightActivePreset() {
-  document.querySelectorAll('.preset-item').forEach(el => {
+  document.querySelectorAll('.preset-item').forEach(item => {
+    const el = /** @type {HTMLElement} */ (item);
     el.classList.toggle('active', el.dataset.presetId === state.activePresetId);
   });
 }
@@ -210,7 +213,8 @@ function switchLanguage(newLang) {
 
   // Update language pills
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.lang === newLang);
+    const el = /** @type {HTMLElement} */ (btn);
+    el.classList.toggle('active', el.dataset.lang === newLang);
   });
 
   // If a preset is currently active, load translation for that preset
@@ -247,17 +251,17 @@ function syncFormInputs() {
   dom.selectSloganWeight.value = state.config.sloganFontWeight;
   dom.toggleUppercase.checked = state.config.uppercase;
 
-  dom.sliderSloganFontSize.value = state.config.sloganFontSize;
+  dom.sliderSloganFontSize.value = String(state.config.sloganFontSize);
   dom.labelSloganFontSize.textContent = `${state.config.sloganFontSize}px`;
 
-  dom.sliderArcFontSize.value = state.config.topArcFontSize;
+  dom.sliderArcFontSize.value = String(state.config.topArcFontSize);
   dom.labelArcFontSize.textContent = `${state.config.topArcFontSize}px`;
 
-  dom.sliderBorderWidth.value = state.config.borderWidth;
+  dom.sliderBorderWidth.value = String(state.config.borderWidth);
   dom.labelBorderWidth.textContent = `${state.config.borderWidth}px`;
 
   dom.selectStarPosition.value = state.config.starPosition;
-  dom.inputDiameter.value = state.config.diameterMm;
+  dom.inputDiameter.value = String(state.config.diameterMm);
   dom.toggleEmblem.checked = state.config.showWattEmblem;
   dom.toggleInnerRings.checked = state.config.innerRing;
   dom.toggleCutLine.checked = state.config.showCutLine;
@@ -607,7 +611,7 @@ async function renderSvgToPngBytes(svgString, width = 2048, height = 2048) {
         }
         const reader = new FileReader();
         reader.onload = () => {
-          resolve(new Uint8Array(reader.result));
+          resolve(new Uint8Array(/** @type {ArrayBuffer} */ (reader.result)));
         };
         reader.onerror = reject;
         reader.readAsArrayBuffer(pngBlob);
@@ -628,21 +632,23 @@ async function renderSvgToPngBytes(svgString, width = 2048, height = 2048) {
  */
 function bindEvents() {
   // Language selector
-  dom.languageSelector.addEventListener('click', (e) => {
-    const btn = e.target.closest('.lang-btn');
+  dom.languageSelector?.addEventListener('click', (e) => {
+    const target = /** @type {HTMLElement} */ (e.target);
+    const btn = /** @type {HTMLElement | null} */ (target?.closest('.lang-btn'));
     if (btn && btn.dataset.lang) {
       switchLanguage(btn.dataset.lang);
     }
   });
 
   // View Mode Tabs
-  dom.tabBtnSingle.addEventListener('click', () => setViewMode('single'));
-  dom.tabBtnSheet.addEventListener('click', () => setViewMode('sheet'));
-  dom.tabBtnBatch.addEventListener('click', () => setViewMode('batch'));
+  dom.tabBtnSingle?.addEventListener('click', () => setViewMode('single'));
+  dom.tabBtnSheet?.addEventListener('click', () => setViewMode('sheet'));
+  dom.tabBtnBatch?.addEventListener('click', () => setViewMode('batch'));
 
   // Sheet layout dropdown
-  dom.selectSheetLayout.addEventListener('change', (e) => {
-    state.sheetLayout = e.target.value;
+  dom.selectSheetLayout?.addEventListener('change', (e) => {
+    const target = /** @type {HTMLSelectElement} */ (e.target);
+    state.sheetLayout = target.value;
     render();
   });
 

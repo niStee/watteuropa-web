@@ -1,3 +1,4 @@
+// @ts-check
 /**
  * watteuropa.org - NFT 2026 Client Scripts
  * High-performance, lightweight vanilla JS for Inlets showcase,
@@ -690,12 +691,12 @@ function openInletModal(langKey) {
   if (!data) return;
 
   const modal = document.getElementById('inletModal');
-  const imgEl = document.getElementById('modalInletImg');
+  const imgEl = /** @type {HTMLImageElement | null} */ (document.getElementById('modalInletImg'));
   const titleEl = document.getElementById('modalInletTitle');
   const tagEl = document.getElementById('modalInletTag');
   const descEl = document.getElementById('modalInletDesc');
   const expEl = document.getElementById('modalInletExponat');
-  const pdfBtn = document.getElementById('modalPdfDownloadBtn');
+  const pdfBtn = /** @type {HTMLAnchorElement | null} */ (document.getElementById('modalPdfDownloadBtn'));
 
   if (imgEl) {
     imgEl.src = data.img;
@@ -759,7 +760,7 @@ function switchVideoTab(tabKey) {
   currentVideoTab = tabKey;
 
   // Update tab button styles
-  const buttons = document.querySelectorAll('.video-tab-btn');
+  const buttons = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('.video-tab-btn'));
   buttons.forEach(btn => {
     if (btn.dataset.tab === tabKey) {
       btn.classList.add('active');
@@ -776,7 +777,7 @@ function switchVideoTab(tabKey) {
 
   // Update video display (Active iframe or Facade poster)
   if (isVideoPlayerActive) {
-    const iframeEl = document.getElementById('ytPlayerIframe');
+    const iframeEl = /** @type {HTMLIFrameElement | null} */ (document.getElementById('ytPlayerIframe'));
     if (iframeEl) {
       iframeEl.src = `${videoData.src}?autoplay=1&rel=0`;
       iframeEl.title = videoData.title;
@@ -804,7 +805,7 @@ function switchSubtitle(langCode) {
   currentSubLang = langCode;
 
   // Update subtitle buttons
-  const subBtns = document.querySelectorAll('.sub-btn');
+  const subBtns = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('.sub-btn'));
   subBtns.forEach(btn => {
     if (btn.dataset.sub === langCode) {
       btn.classList.add('active');
@@ -817,7 +818,7 @@ function switchSubtitle(langCode) {
   renderTranscript(langCode);
 
   // Update video text track if active
-  const videoEl = document.getElementById('localVideoPlayer');
+  const videoEl = /** @type {HTMLVideoElement | null} */ (document.getElementById('localVideoPlayer'));
   if (videoEl && videoEl.textTracks) {
     for (let i = 0; i < videoEl.textTracks.length; i++) {
       const track = videoEl.textTracks[i];
@@ -853,7 +854,7 @@ function seekVideo(timeStr) {
   const parts = timeStr.split(':');
   if (parts.length === 2) {
     const seconds = parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
-    const videoEl = document.getElementById('localVideoPlayer');
+    const videoEl = /** @type {HTMLVideoElement | null} */ (document.getElementById('localVideoPlayer'));
     if (videoEl && videoEl.style.display !== 'none') {
       videoEl.currentTime = seconds;
       videoEl.play();
@@ -868,7 +869,7 @@ function switchLanguage(langCode) {
   currentLang = langCode;
 
   // Update top language buttons
-  const langBtns = document.querySelectorAll('.lang-btn');
+  const langBtns = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('.lang-btn'));
   langBtns.forEach(btn => {
     if (btn.dataset.lang === langCode) {
       btn.classList.add('active');
@@ -911,7 +912,7 @@ function switchLanguage(langCode) {
   if (videosDescEl && t.videosDesc) videosDescEl.textContent = t.videosDesc;
 
   // Dynamically swap Hero inlet image & modal action to match selected language
-  const heroInletImg = document.getElementById('heroInletImg');
+  const heroInletImg = /** @type {HTMLImageElement | null} */ (document.getElementById('heroInletImg'));
   const heroInletStage = document.getElementById('heroInletStage');
   if (heroInletImg && heroInletStage) {
     const inletThumbMap = {

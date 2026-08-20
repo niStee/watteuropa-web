@@ -246,4 +246,18 @@ describe("watteuropa.org - NFT 2026 Landing Page Test Suite", () => {
     expect(js).toContain("function playCurrentVideo");
     expect(js).toContain("autoplay=1");
   });
+
+  test("Zero-Build Type Safety: tsconfig.json and @ts-check in place", () => {
+    const tsconfigPath = path.join(ROOT, "tsconfig.json");
+    expect(fs.existsSync(tsconfigPath)).toBe(true);
+
+    const tsconfig = JSON.parse(fs.readFileSync(tsconfigPath, "utf-8"));
+    expect(tsconfig.compilerOptions.checkJs).toBe(true);
+    expect(tsconfig.compilerOptions.noEmit).toBe(true);
+
+    const mainJs = fs.readFileSync(mainJsPath, "utf-8");
+    const appJs = fs.readFileSync(path.join(ROOT, "generator/app.js"), "utf-8");
+    expect(mainJs.startsWith("// @ts-check")).toBe(true);
+    expect(appJs.startsWith("// @ts-check")).toBe(true);
+  });
 });

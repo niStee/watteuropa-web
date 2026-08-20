@@ -3,7 +3,8 @@
   "version": "1.1.1",
   "description": "NFT 2026 / Nationalfreie Tage Landing Page and Multilingual Web Platform for Josef Tieber & WATT European Art",
   "scripts": {
-    "test": "bun test",
+    "test": "bun test && tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "lint:i18n": "bun test tests/i18n.test.ts",
     "dev": "bun --serve ."
   },
@@ -15,5 +16,10 @@
     "i18n"
   ],
   "author": "Josef Tieber / niStee",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bun": "^1.3.14",
+    "@types/node": "^26.2.0",
+    "typescript": "^7.0.2"
+  }
 }
