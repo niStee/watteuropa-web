@@ -70,4 +70,3 @@ jobs:
             --tags wcag2a,wcag2aa,wcag21a,wcag21aa \
             --exclude iframe \
             --exit
-        continue-on-error: true
