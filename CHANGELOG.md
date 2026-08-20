@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/niStee/watteuropa-web/compare/watteuropa-web-v1.1.1...watteuropa-web-v1.2.0) (2026-08-20)
+
+
+### Features
+
+* **privacy:** self-host WOFF2 typography and implement 2-click YouTube poster facade ([#13](https://github.com/niStee/watteuropa-web/issues/13)) ([9d22d1e](https://github.com/niStee/watteuropa-web/commit/9d22d1ed7b7bb27821a18888c2f0e31e1250ac9a))
+* **types:** enforce strict zero-build TypeScript typechecking via JSDoc and tsc ([#15](https://github.com/niStee/watteuropa-web/issues/15)) ([1cdbaf6](https://github.com/niStee/watteuropa-web/commit/1cdbaf695b10ae15a822d0520eaa9ec5df10ec11))
+
 ## [1.1.1](https://github.com/niStee/watteuropa-web/compare/watteuropa-web-v1.1.0...watteuropa-web-v1.1.1) (2026-08-20)
 
 
