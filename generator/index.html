@@ -81,7 +81,7 @@
               <label class="form-label">
                 <span>Offizielle Vorlagen (NFT 2026 / Exponate)</span>
               </label>
-              <div class="preset-list" id="presetList">
+              <div class="preset-list" id="presetList" tabindex="0" role="region" aria-label="Offizielle Vorlagenliste">
                 <!-- Injected via JS -->
               </div>
             </div>
@@ -177,9 +177,9 @@
             </div>
 
             <div class="toggle-row">
-              <span class="toggle-label">Großbuchstaben erzwingen (UPPERCASE)</span>
-              <label class="switch">
-                <input type="checkbox" id="toggleUppercase" checked>
+              <span class="toggle-label" id="labelToggleUppercase">Großbuchstaben erzwingen (UPPERCASE)</span>
+              <label class="switch" for="toggleUppercase">
+                <input type="checkbox" id="toggleUppercase" aria-labelledby="labelToggleUppercase" checked>
                 <span class="slider-switch"></span>
               </label>
             </div>
@@ -187,18 +187,18 @@
             <!-- Fine-tuning Sliders -->
             <div class="slider-group">
               <div class="slider-header">
-                <span>Slogan Schriftgröße</span>
+                <span id="titleSloganFontSize">Slogan Schriftgröße</span>
                 <span id="labelSloganFontSize">58px</span>
               </div>
-              <input type="range" id="sliderSloganFontSize" class="form-range" min="30" max="84" value="58">
+              <input type="range" id="sliderSloganFontSize" class="form-range" min="30" max="84" value="58" aria-labelledby="titleSloganFontSize">
             </div>
 
             <div class="slider-group">
               <div class="slider-header">
-                <span>Bogen-Schriftgröße (Oben/Unten)</span>
+                <span id="titleArcFontSize">Bogen-Schriftgröße (Oben/Unten)</span>
                 <span id="labelArcFontSize">38px</span>
               </div>
-              <input type="range" id="sliderArcFontSize" class="form-range" min="20" max="52" value="38">
+              <input type="range" id="sliderArcFontSize" class="form-range" min="20" max="52" value="38" aria-labelledby="titleArcFontSize">
             </div>
           </div>
         </section>
@@ -289,25 +289,25 @@
 
             <!-- Toggles for Rings and Emblem -->
             <div class="toggle-row">
-              <span class="toggle-label">WATT European Art Emblem</span>
-              <label class="switch">
-                <input type="checkbox" id="toggleEmblem" checked>
+              <span class="toggle-label" id="labelToggleEmblem">WATT European Art Emblem</span>
+              <label class="switch" for="toggleEmblem">
+                <input type="checkbox" id="toggleEmblem" aria-labelledby="labelToggleEmblem" checked>
                 <span class="slider-switch"></span>
               </label>
             </div>
 
             <div class="toggle-row">
-              <span class="toggle-label">Innere Schmuckringe</span>
-              <label class="switch">
-                <input type="checkbox" id="toggleInnerRings" checked>
+              <span class="toggle-label" id="labelToggleInnerRings">Innere Schmuckringe</span>
+              <label class="switch" for="toggleInnerRings">
+                <input type="checkbox" id="toggleInnerRings" aria-labelledby="labelToggleInnerRings" checked>
                 <span class="slider-switch"></span>
               </label>
             </div>
 
             <div class="toggle-row">
-              <span class="toggle-label">Gepunktete Schnittlinie &amp; Fadenkreuze</span>
-              <label class="switch">
-                <input type="checkbox" id="toggleCutLine" checked>
+              <span class="toggle-label" id="labelToggleCutLine">Gepunktete Schnittlinie &amp; Fadenkreuze</span>
+              <label class="switch" for="toggleCutLine">
+                <input type="checkbox" id="toggleCutLine" aria-labelledby="labelToggleCutLine" checked>
                 <span class="slider-switch"></span>
               </label>
             </div>
@@ -315,10 +315,10 @@
             <!-- Border Width Slider -->
             <div class="slider-group">
               <div class="slider-header">
-                <span>Äußere Rahmenstärke</span>
+                <span id="titleBorderWidth">Äußere Rahmenstärke</span>
                 <span id="labelBorderWidth">8px</span>
               </div>
-              <input type="range" id="sliderBorderWidth" class="form-range" min="0" max="24" value="8">
+              <input type="range" id="sliderBorderWidth" class="form-range" min="0" max="24" value="8" aria-labelledby="titleBorderWidth">
             </div>
           </div>
         </section>
