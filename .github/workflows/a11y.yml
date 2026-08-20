@@ -50,10 +50,10 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: '22'
-      - name: Install axe-core CLI & Playwright
+      - name: Install axe-core CLI & ChromeDriver
         run: |
           npm install -g @axe-core/cli
-          npx playwright install --with-deps chromium
+          npx browser-driver-manager install chrome
       - name: Start HTTP server
         run: nohup python3 -m http.server 8080 >/dev/null 2>&1 &
       - name: Wait for server
