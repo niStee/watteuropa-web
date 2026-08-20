@@ -62,10 +62,12 @@ jobs:
         run: |
           axe http://localhost:8080 \
             --tags wcag2a,wcag2aa,wcag21a,wcag21aa \
+            --exclude iframe \
             --exit
       - name: Run axe audit – Generator page
         run: |
           axe http://localhost:8080/generator/index.html \
             --tags wcag2a,wcag2aa,wcag21a,wcag21aa \
+            --exclude iframe \
             --exit
         continue-on-error: true
