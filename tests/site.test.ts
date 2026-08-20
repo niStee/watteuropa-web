@@ -204,4 +204,46 @@ describe("watteuropa.org - NFT 2026 Landing Page Test Suite", () => {
     expect(yaml).toContain("@axe-core/cli");
     expect(yaml).toContain("wcag21aa");
   });
+
+  test("Privacy: Zero external Google Fonts CDN requests (Self-Hosted Typography)", () => {
+    const html = fs.readFileSync(indexPath, "utf-8");
+    const genHtml = fs.readFileSync(path.join(ROOT, "generator/index.html"), "utf-8");
+    const css = fs.readFileSync(stylePath, "utf-8");
+
+    // Assert no external Google Font links in HTML
+    expect(html).not.toContain("fonts.googleapis.com");
+    expect(html).not.toContain("fonts.gstatic.com");
+    expect(genHtml).not.toContain("fonts.googleapis.com");
+    expect(genHtml).not.toContain("fonts.gstatic.com");
+
+    // Assert fonts.css is imported and fonts directory exists
+    expect(css).toContain("assets/fonts/fonts.css");
+    const fontsDir = path.join(ROOT, "assets/fonts");
+    expect(fs.existsSync(fontsDir)).toBe(true);
+    const fontFiles = fs.readdirSync(fontsDir);
+    expect(fontFiles.length).toBeGreaterThan(10);
+  });
+
+  test("Privacy & Core Web Vitals: 2-Click YouTube Poster-Play Facade", () => {
+    const html = fs.readFileSync(indexPath, "utf-8");
+    const js = fs.readFileSync(mainJsPath, "utf-8");
+
+    // Facade elements in DOM
+    expect(html).toContain('id="videoAspectWrap"');
+    expect(html).toContain('id="videoFacade"');
+    expect(html).toContain('id="btnPlayVideo"');
+    expect(html).toContain("playCurrentVideo");
+
+    // Video posters on disk
+    const posters = ["day3.jpg", "tv.jpg", "day1.jpg", "day2.jpg"];
+    for (const poster of posters) {
+      const posterPath = path.join(ROOT, "assets/img/video-posters", poster);
+      expect(fs.existsSync(posterPath)).toBe(true);
+      expect(fs.statSync(posterPath).size).toBeGreaterThan(1000);
+    }
+
+    // Playback function in JS
+    expect(js).toContain("function playCurrentVideo");
+    expect(js).toContain("autoplay=1");
+  });
 });

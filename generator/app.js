@@ -578,7 +578,15 @@ Enthaltene Sprachen: DE, EN, FR, NL, CZ`
 /**
  * Helper: Renders SVG string to PNG Uint8Array bytes via Canvas
  */
-function renderSvgToPngBytes(svgString, width = 2048, height = 2048) {
+async function renderSvgToPngBytes(svgString, width = 2048, height = 2048) {
+  if (typeof document !== 'undefined' && document.fonts && document.fonts.ready) {
+    try {
+      await document.fonts.ready;
+    } catch (_) {
+      // ignore font readiness error
+    }
+  }
+
   return new Promise((resolve, reject) => {
     const blob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
     const url = URL.createObjectURL(blob);
