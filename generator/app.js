@@ -9,8 +9,7 @@ import {
   DEFAULT_CONFIG,
   generateBadgeSvg,
   generatePrintSheetSvg,
-  createZip,
-  resolveColors
+  createZip
 } from './generator-core.js';
 
 // Application State
