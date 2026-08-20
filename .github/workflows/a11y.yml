@@ -1,0 +1,77 @@
+name: Accessibility & HTML Validation
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**.html'
+      - '**.css'
+      - '**.js'
+      - '.github/workflows/a11y.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '**.html'
+      - '**.css'
+      - '**.js'
+      - '.github/workflows/a11y.yml'
+  workflow_dispatch:
+
+permissions: read-all
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  html-validate:
+    name: W3C HTML & CSS Validation
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: Cyb3r-Jak3/html5validator-action@eb5e5e77898b10b10ef3f11bc3f9d5d6f3fce91d # v7.2.0
+        with:
+          target: |
+            index.html
+            generator/index.html
+          css: true
+          extra: '--errors-only'
+
+  axe-audit:
+    name: Axe Accessibility Audit (WCAG 2.1 AA)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          bun-version: latest
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+      - name: Install axe-core CLI & Playwright
+        run: |
+          npm install -g @axe-core/cli
+          npx playwright install --with-deps chromium
+      - name: Serve site with Bun
+        run: bun --serve . &
+        env:
+          PORT: 8080
+      - name: Wait for server
+        run: npx wait-on http://localhost:8080 --timeout 15000
+      - name: Run axe audit – Main page
+        run: |
+          axe http://localhost:8080 \
+            --tags wcag2a,wcag2aa,wcag21a,wcag21aa \
+            --reporter cli \
+            --exit
+      - name: Run axe audit – Generator page
+        run: |
+          axe http://localhost:8080/generator/index.html \
+            --tags wcag2a,wcag2aa,wcag21a,wcag21aa \
+            --reporter cli \
+            --exit
+        continue-on-error: true

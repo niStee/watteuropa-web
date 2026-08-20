@@ -192,4 +192,16 @@ describe("watteuropa.org - NFT 2026 Landing Page Test Suite", () => {
       }
     }
   });
+
+  test("Accessibility & HTML validation workflow exists (a11y.yml)", () => {
+    const a11yWorkflowPath = path.join(ROOT, ".github", "workflows", "a11y.yml");
+    expect(fs.existsSync(a11yWorkflowPath)).toBe(true);
+    const yaml = fs.readFileSync(a11yWorkflowPath, "utf-8");
+    expect(yaml).toContain("name: Accessibility & HTML Validation");
+    expect(yaml).toContain("html-validate:");
+    expect(yaml).toContain("axe-audit:");
+    expect(yaml).toContain("Cyb3r-Jak3/html5validator-action");
+    expect(yaml).toContain("@axe-core/cli");
+    expect(yaml).toContain("wcag21aa");
+  });
 });
