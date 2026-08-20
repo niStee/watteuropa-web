@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/niStee/watteuropa-web/compare/watteuropa-web-v1.1.0...watteuropa-web-v1.1.1) (2026-08-20)
+
+
+### Bug Fixes
+
+* **a11y:** add accessible labels and enforce blocking WCAG 2.1 AA audit on generator ([#12](https://github.com/niStee/watteuropa-web/issues/12)) ([dc3e0ca](https://github.com/niStee/watteuropa-web/commit/dc3e0cadd1797c254f963fce8de90189d433e3d2))
+* **codeql:** remove unused resolveColors import ([#9](https://github.com/niStee/watteuropa-web/issues/9)) ([bbbf81a](https://github.com/niStee/watteuropa-web/commit/bbbf81a188a0e4925bff6529f81bf9353519050f))
+
 ## [1.1.0](https://github.com/niStee/watteuropa-web/compare/watteuropa-web-v1.0.0...watteuropa-web-v1.1.0) (2026-08-19)
 
 
