@@ -68,24 +68,31 @@ const VIDEO_CATALOG = {
   day3: {
     title: 'Tag 3: Abschlusskundgebung & Erläuterung Kunstwerk (Wegberg)',
     desc: 'Vollständige Kundgebung durch Wegberg mit Erläuterung der „Hohen Rösser“ und dem Europäischen Gruß.',
-    src: 'https://www.youtube-nocookie.com/embed/A7CWUPn2YEY'
+    src: 'https://www.youtube-nocookie.com/embed/A7CWUPn2YEY',
+    poster: 'assets/img/video-posters/day3.jpg'
   },
   tv: {
     title: 'TV Version (Framebuilder Media Edit • 2:30 min)',
     desc: 'Kompakte Fernseh- und Nachrichtenversion der Aktion für Rundfunk und soziale Medien.',
-    src: 'https://www.youtube-nocookie.com/embed/wrHgyR6Z_-I'
+    src: 'https://www.youtube-nocookie.com/embed/wrHgyR6Z_-I',
+    poster: 'assets/img/video-posters/tv.jpg'
   },
   day1: {
     title: 'Tag 1: Political Evolution & Entstehungsgeschichte',
     desc: 'Von der Französischen Revolution bis GRÜN und VIOLETT als moderne europäische Leitkultur.',
-    src: 'https://www.youtube-nocookie.com/embed/bjQgVwqIg44'
+    src: 'https://www.youtube-nocookie.com/embed/bjQgVwqIg44',
+    poster: 'assets/img/video-posters/day1.jpg'
   },
   day2: {
     title: 'Tag 2: Schengen², Europäische Netze & Zukunft',
     desc: 'Gemeinschaftliche Infrastruktur, europäische Bahnsysteme und einheitlicher Grenzschutz.',
-    src: 'https://www.youtube-nocookie.com/embed/dTHp3CdKcmM'
+    src: 'https://www.youtube-nocookie.com/embed/dTHp3CdKcmM',
+    poster: 'assets/img/video-posters/day2.jpg'
   }
 };
+
+let isVideoPlayerActive = false;
+let currentVideoTab = 'day3';
 
 // Transcripts for interactive subtitles viewer
 const TRANSCRIPTS = {
@@ -721,11 +728,35 @@ function closeInletModal() {
 }
 
 /**
+ * Play Current Video (2-Click Facade Activation)
+ */
+function playCurrentVideo() {
+  const videoData = VIDEO_CATALOG[currentVideoTab];
+  if (!videoData) return;
+
+  const wrap = document.getElementById('videoAspectWrap');
+  if (!wrap) return;
+
+  isVideoPlayerActive = true;
+  wrap.innerHTML = `
+    <iframe
+      id="ytPlayerIframe"
+      src="${videoData.src}?autoplay=1&rel=0"
+      title="${videoData.title}"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  `;
+}
+
+/**
  * Switch Video Tab in Player Section (4 Official YouTube Videos)
  */
 function switchVideoTab(tabKey) {
   const videoData = VIDEO_CATALOG[tabKey];
   if (!videoData) return;
+
+  currentVideoTab = tabKey;
 
   // Update tab button styles
   const buttons = document.querySelectorAll('.video-tab-btn');
@@ -743,10 +774,26 @@ function switchVideoTab(tabKey) {
   if (titleEl) titleEl.textContent = videoData.title;
   if (descEl) descEl.textContent = videoData.desc;
 
-  // Update YouTube iframe src
-  const iframeEl = document.getElementById('ytPlayerIframe');
-  if (iframeEl) {
-    iframeEl.src = videoData.src;
+  // Update video display (Active iframe or Facade poster)
+  if (isVideoPlayerActive) {
+    const iframeEl = document.getElementById('ytPlayerIframe');
+    if (iframeEl) {
+      iframeEl.src = `${videoData.src}?autoplay=1&rel=0`;
+      iframeEl.title = videoData.title;
+    }
+  } else {
+    const facadeEl = document.getElementById('videoFacade');
+    const facadeBtn = document.getElementById('btnPlayVideo');
+    const facadeTitle = document.getElementById('facadeTitle');
+    if (facadeEl) {
+      facadeEl.style.backgroundImage = `url('${videoData.poster}')`;
+    }
+    if (facadeBtn) {
+      facadeBtn.setAttribute('aria-label', `Video abspielen: ${videoData.title}`);
+    }
+    if (facadeTitle) {
+      facadeTitle.textContent = videoData.title;
+    }
   }
 }
 
@@ -1001,6 +1048,6 @@ window.closeLegalModal = closeLegalModal;
 window.switchLegalTab = switchLegalTab;
 window.switchVideoTab = switchVideoTab;
 window.switchSubtitle = switchSubtitle;
+window.playCurrentVideo = playCurrentVideo;
 window.switchLanguage = switchLanguage;
 window.seekVideo = seekVideo;
-
