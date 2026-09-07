@@ -62,3 +62,10 @@ bun run dev
 - [`CONTRIBUTING.md`](CONTRIBUTING.md): FOSS contribution guidelines and Conventional Commits.
 - [`SECURITY.md`](SECURITY.md): Vulnerability reporting policy.
 - [`LICENSE`](LICENSE): MIT License for code + Copyright notice for artworks.
+
+## Repository topology
+- canonical: GitHub (niStee/watteuropa-web) — all changes land via PR to main
+- mirror: Codeberg (codeberg.org/niStee/watteuropa-web) — automated push mirror via
+  .github/workflows/mirror-codeberg.yml; receives main + tags only
+- never push directly to main; never push to Codeberg directly
+- mirror repair path: re-run the workflow (workflow_dispatch), not local pushes
