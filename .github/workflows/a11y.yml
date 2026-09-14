@@ -3,18 +3,8 @@ name: Accessibility & HTML Validation
 on:
   push:
     branches: [ main ]
-    paths:
-      - '**.html'
-      - '**.css'
-      - '**.js'
-      - '.github/workflows/a11y.yml'
   pull_request:
     branches: [ main ]
-    paths:
-      - '**.html'
-      - '**.css'
-      - '**.js'
-      - '.github/workflows/a11y.yml'
   workflow_dispatch:
 
 permissions: read-all
@@ -29,9 +19,24 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: Cyb3r-Jak3/html5validator-action@4ea5e57383ed7e14432ebbaae1b64893b7c5210b # v8.0.0
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Skip when no frontend files changed
+        id: guard
+        run: |
+          if git diff --name-only origin/${{ github.base_ref || 'main' }}...HEAD \
+            | grep -qE '\.(html|css|js)$|\.github/workflows/a11y\.yml'; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"; echo "frontend changes detected"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"; echo "no frontend changes — skipping heavy validation"
+          fi
+      - name: W3C validate
+        if: steps.guard.outputs.changed == 'true'
+        uses: Cyb3r-Jak3/html5validator-action@4ea5e57383ed7e14432ebbaae1b64893b7c5210b # v8.0.0
         with:
           root: .
           css: true
@@ -42,29 +47,50 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Skip when no frontend files changed
+        id: guard
+        run: |
+          if git diff --name-only origin/${{ github.base_ref || 'main' }}...HEAD \
+            | grep -qE '\.(html|css|js)$|\.github/workflows/a11y\.yml'; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"; echo "frontend changes detected"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"; echo "no frontend changes — skipping heavy validation"
+          fi
+      - name: Setup toolchain
+        if: steps.guard.outputs.changed == 'true'
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
         with:
           bun-version: latest
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+      - if: steps.guard.outputs.changed == 'true'
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: '22'
       - name: Install axe-core CLI & ChromeDriver
+        if: steps.guard.outputs.changed == 'true'
         run: |
           npm install -g @axe-core/cli
           npx browser-driver-manager install chrome
       - name: Start HTTP server
+        if: steps.guard.outputs.changed == 'true'
         run: nohup python3 -m http.server 8080 >/dev/null 2>&1 &
       - name: Wait for server
+        if: steps.guard.outputs.changed == 'true'
         run: npx wait-on http://localhost:8080 --timeout 15000
       - name: Run axe audit – Main page
+        if: steps.guard.outputs.changed == 'true'
         run: |
           axe http://localhost:8080 \
             --tags wcag2a,wcag2aa,wcag21a,wcag21aa \
             --exclude iframe \
             --exit
       - name: Run axe audit – Generator page
+        if: steps.guard.outputs.changed == 'true'
         run: |
           axe http://localhost:8080/generator/index.html \
             --tags wcag2a,wcag2aa,wcag21a,wcag21aa \
