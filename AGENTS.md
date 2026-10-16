@@ -2,7 +2,7 @@
 
 > Parent: [~/AGENTS.md](../../AGENTS.md) — environment-wide context (LiteLLM proxy, git identity, toolchains).
 > Primary Repo: `niStee/watteuropa-web` on GitHub (public) · EU Mirror: `niStee/watteuropa-web` on Codeberg (private)
-> Security Policy: [SECURITY.md](file:///home/nils/Projects/watteuropa-web/SECURITY.md) · Code License: MIT · Media License: © Josef Tieber
+> Security Policy: [SECURITY.md](file:///home/nils/Projects/watteuropa-web/SECURITY.md) · Code License: Apache-2.0 · Media License: CC BY-NC-ND 4.0 (Josef Tieber)
 
 Official web landing page and interactive circular slogan/inlet generator for **WATT European Art • Nationalfreie Tage (NFT 2026)** by **Josef Tieber (Ing. HTL)**.
 
@@ -20,8 +20,8 @@ Official web landing page and interactive circular slogan/inlet generator for **
 - **Core Technologies**: Semantic HTML5, Vanilla CSS (CSS variables, fluid typography, zero Tailwind), ES Modules (no frontend framework build steps).
 - **Privacy & GDPR**: **Zero tracking cookies, zero third-party analytics**. Privacy-First architecture. YouTube embeds use `youtube-nocookie.com`.
 - **Licensing Separation**:
-  - **Code (FOSS)**: [MIT License](LICENSE) (Nils Steenebruegge).
-  - **Artistic Works & Media**: © Copyright 2026 Josef Tieber (WATT European Art). All rights reserved.
+  - **Code (FOSS)**: [Apache-2.0 License](LICENSE) (niStee and contributors).
+  - **Artistic Works & Media**: CC BY-NC-ND 4.0 / © Copyright 2026 Josef Tieber (WATT European Art). All rights reserved.
   - **Independence**: Independent artistic project by Josef Tieber; not an official organ of Volt Europa.
 
 ---
@@ -61,7 +61,7 @@ bun run dev
 - [`DEPLOYMENT.md`](DEPLOYMENT.md): Detailed United Domains and DNS CNAME setup instructions.
 - [`CONTRIBUTING.md`](CONTRIBUTING.md): FOSS contribution guidelines and Conventional Commits.
 - [`SECURITY.md`](SECURITY.md): Vulnerability reporting policy.
-- [`LICENSE`](LICENSE): MIT License for code + Copyright notice for artworks.
+- [`LICENSE`](LICENSE): Apache-2.0 License for code + CC BY-NC-ND 4.0 for artistic works.
 
 ## Repository topology
 - canonical: GitHub (niStee/watteuropa-web) — all changes land via PR to main

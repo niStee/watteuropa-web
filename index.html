@@ -36,7 +36,7 @@
   <!-- Site Header & Navigation -->
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
-      <a href="#hero" class="brand-link" aria-label="WATT Europa Homepage">
+      <a href="#hero" class="brand-link">
         <img src="assets/img/watt-logo.png" alt="WATT Art Logo" class="brand-logo" width="115" height="38">
         <div class="brand-tagline">
           <span>European Art Project</span>
@@ -321,14 +321,14 @@
         <div class="video-player-container">
           <div class="video-aspect-wrap" id="videoAspectWrap">
             <div class="video-facade" id="videoFacade" style="background-image: url('assets/img/video-posters/day3.jpg');">
-              <button type="button" class="video-facade-btn" id="btnPlayVideo" onclick="playCurrentVideo()" aria-label="Video abspielen: Tag 3 Abschlusskundgebung & Erläuterung Kunstwerk (Wegberg)">
-                <span class="video-facade-play-circle">
-                  <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" width="36" height="36">
+              <button type="button" class="video-facade-btn" id="btnPlayVideo" onclick="playCurrentVideo()">
+                <span class="video-facade-play-circle" aria-hidden="true">
+                  <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" width="36" height="36" aria-hidden="true">
                     <polygon points="6 4 20 12 6 20 6 4"></polygon>
                   </svg>
                 </span>
                 <span class="video-facade-title" id="facadeTitle">Tag 3: Abschlusskundgebung &amp; Erläuterung Kunstwerk (Wegberg)</span>
-                <span class="video-facade-privacy">🔒 Datenschutz: Klick lädt Video direkt von YouTube (youtube-nocookie.com)</span>
+                <span class="video-facade-privacy" aria-hidden="true">🔒 Datenschutz: Klick lädt Video direkt von YouTube (youtube-nocookie.com)</span>
               </button>
             </div>
           </div>
@@ -613,10 +613,10 @@
 
           <h4>Urheberrecht &amp; Verwertungsrechte (Copyright Josef Tieber)</h4>
           <p>
-            Die durch den Seitenbetreiber erstellten künstlerischen Inhalte und Werke auf diesen Seiten (insbesondere die Konzeption der <em>Nationalfreien Tage</em>, die kinetischen Skulpturen <em>Hohe Europäische Rösser HER2a</em>, die Exponat-Inlets <em>201 DE/EN/FR/NL/CZ</em>, Druck-PDFs sowie die filmischen Dokumentationen) unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der vorherigen schriftlichen Zustimmung von Josef Tieber (WATT European Art).
+            Die durch den Seitenbetreiber erstellten künstlerischen Inhalte und Werke auf diesen Seiten (insbesondere die Konzeption der <em>Nationalfreien Tage</em>, die kinetischen Skulpturen <em>Hohe Europäische Rösser HER2a</em>, die Exponat-Inlets <em>201 DE/EN/FR/NL/CZ</em>, Druck-PDFs sowie die filmischen Dokumentationen) unterliegen dem Urheberrecht von Josef Tieber (WATT European Art) und stehen unter der Creative Commons Namensnennung - Nicht-kommerziell - Keine Bearbeitung 4.0 International Lizenz (CC BY-NC-ND 4.0).
           </p>
           <p>
-            Der Quellcode der Webanwendung und des Slogan-Generators steht unter der freien MIT-Lizenz (Open Source Software).
+            Der Quellcode der Webanwendung und des Slogan-Generators steht unter der Open-Source-Lizenz Apache-2.0.
           </p>
 
           <h4>Hinweis zur Projekt-Unabhängigkeit</h4>

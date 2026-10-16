@@ -790,7 +790,7 @@ function switchVideoTab(tabKey) {
       facadeEl.style.backgroundImage = `url('${videoData.poster}')`;
     }
     if (facadeBtn) {
-      facadeBtn.setAttribute('aria-label', `Video abspielen: ${videoData.title}`);
+      facadeBtn.removeAttribute('aria-label');
     }
     if (facadeTitle) {
       facadeTitle.textContent = videoData.title;
