@@ -36,7 +36,7 @@
   <!-- Site Header & Navigation -->
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
-      <a href="#hero" class="brand-link" aria-label="WATT Europa Homepage">
+      <a href="#hero" class="brand-link">
         <img src="assets/img/watt-logo.png" alt="WATT Art Logo" class="brand-logo" width="115" height="38">
         <div class="brand-tagline">
           <span>European Art Project</span>
@@ -321,14 +321,14 @@
         <div class="video-player-container">
           <div class="video-aspect-wrap" id="videoAspectWrap">
             <div class="video-facade" id="videoFacade" style="background-image: url('assets/img/video-posters/day3.jpg');">
-              <button type="button" class="video-facade-btn" id="btnPlayVideo" onclick="playCurrentVideo()" aria-label="Video abspielen: Tag 3 Abschlusskundgebung & Erläuterung Kunstwerk (Wegberg)">
-                <span class="video-facade-play-circle">
-                  <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" width="36" height="36">
+              <button type="button" class="video-facade-btn" id="btnPlayVideo" onclick="playCurrentVideo()">
+                <span class="video-facade-play-circle" aria-hidden="true">
+                  <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" width="36" height="36" aria-hidden="true">
                     <polygon points="6 4 20 12 6 20 6 4"></polygon>
                   </svg>
                 </span>
                 <span class="video-facade-title" id="facadeTitle">Tag 3: Abschlusskundgebung &amp; Erläuterung Kunstwerk (Wegberg)</span>
-                <span class="video-facade-privacy">🔒 Datenschutz: Klick lädt Video direkt von YouTube (youtube-nocookie.com)</span>
+                <span class="video-facade-privacy" aria-hidden="true">🔒 Datenschutz: Klick lädt Video direkt von YouTube (youtube-nocookie.com)</span>
               </button>
             </div>
           </div>
