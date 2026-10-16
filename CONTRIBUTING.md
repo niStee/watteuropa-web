@@ -10,12 +10,12 @@ This document outlines the guidelines and workflow for proposing changes, report
 
 Before contributing, please note the distinction between code and artistic assets:
 
-1. **Software & Web Code (Apache-2.0 License):**  
-   All source code (HTML, Vanilla CSS, JavaScript, test suites, generator logic, and CI/CD pipelines) is open source under the [Apache-2.0 License](LICENSE).
+1. **Software & Web Code (EUPL-1.2 License):**  
+   All source code (HTML, Vanilla CSS, JavaScript, test suites, generator logic, and CI/CD pipelines) is open source under the [EUPL-1.2 License](LICENSE).
 2. **Artistic Works & Media (CC BY-NC-ND 4.0 / © Copyright Josef Tieber):**  
    All artistic designs, kinetic sculptures (*HER2a*), inlet graphics (*201 DE/EN/FR/NL/CZ, 105 DE*), print PDFs, and video recordings belong exclusively to Josef Tieber and are licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 
-By submitting a Pull Request, you agree that your code contributions are licensed under the repository's Apache-2.0 License.
+By submitting a Pull Request, you agree that your code contributions are licensed under the repository's EUPL-1.2 License.
 
 ---
 

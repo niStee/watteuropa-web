@@ -7,7 +7,7 @@
   <a href="https://scorecard.dev/viewer/?uri=github.com/niStee/watteuropa-web"><img src="https://api.scorecard.dev/projects/github.com/niStee/watteuropa-web/badge" alt="OpenSSF Scorecard"></a>
   <a href="https://bun.sh"><img src="https://img.shields.io/badge/Runtime-Bun%20v1.3+-fbf0df?style=flat&logo=bun&logoColor=black" alt="Bun Runtime"></a>
   <a href="tests/i18n.test.ts"><img src="https://img.shields.io/badge/i18n-100%25%20(DE%20%7C%20EN%20%7C%20FR%20%7C%20NL%20%7C%20CZ)-success.svg?style=flat" alt="i18n Coverage"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/Code_License-Apache--2.0-blue.svg?style=flat" alt="Code License: Apache-2.0"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/Code_License-EUPL--1.2-blue.svg?style=flat" alt="Code License: EUPL-1.2"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/Artworks-CC_BY--NC--ND_4.0_%C2%A9_Josef_Tieber-502379.svg?style=flat" alt="Artworks License"></a>
   <a href="DEPLOYMENT.md"><img src="https://img.shields.io/badge/Deploy-United_Domains-ff6600.svg?style=flat&logo=serverfault&logoColor=white" alt="United Domains Deploy"></a>
 </p>
@@ -79,7 +79,7 @@ watteuropa-web/
 ├── CONTRIBUTING.md             # Entwicklungs- & Mitwirkungs-Leitfaden
 ├── SECURITY.md                 # Sicherheitsrichtlinie & Coordinated Disclosure
 ├── DEPLOYMENT.md               # United Domains & DNS Deployment-Handbuch
-└── LICENSE                     # Apache-2.0-Lizenz (Code) & CC BY-NC-ND 4.0 (Kunstwerke)
+└── LICENSE                     # EUPL-1.2-Lizenz (Code) & CC BY-NC-ND 4.0 (Kunstwerke)
 ```
 
 ---
@@ -115,7 +115,7 @@ bun run dev
 ## ⚖️ Lizenz, Urheberrecht & Unabhängigkeit
 
 - **Software & Quellcode (FOSS):**  
-  Der gesamte Programmcode (HTML, CSS, JavaScript, Slogan-Generator-Logik, CI/CD-Pipelines und Test-Suiten) steht unter der **[Apache-2.0-Lizenz](LICENSE)** (Copyright (c) 2026 niStee and contributors).
+  Der gesamte Programmcode (HTML, CSS, JavaScript, Slogan-Generator-Logik, CI/CD-Pipelines und Test-Suiten) steht unter der **[EUPL-1.2-Lizenz](LICENSE)** (Copyright (c) 2026 niStee and contributors).
 
 - **Künstlerische Werke, Medien & Exponate (CC BY-NC-ND 4.0 / Copyright Josef Tieber):**  
   Alle künstlerischen Inhalte, kinetischen Skulpturen (*Hohe Europäische Rösser HER2a*), grafischen Ausarbeitungen, Exponat-Inlets (*201 DE 3, 201 EN 3, 201 FR 3, 201 NL 3, 201 CZ 4, 105 DE*), Druck-PDFs und Videoaufnahmen unterliegen dem alleinigen **Urheberrecht von Josef Tieber (WATT European Art)** und sind unter der [Creative Commons Namensnennung - Nicht-kommerziell - Keine Bearbeitung 4.0 International Lizenz (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/) lizenziert.
