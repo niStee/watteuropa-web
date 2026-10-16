@@ -16,4 +16,4 @@
 - [ ] `bun run lint:i18n` passes with 100% coverage (if UI text was changed)
 - [ ] Verified in at least one modern browser
 - [ ] No tracking scripts or non-essential cookies added
-- [ ] Follows the project licensing guidelines (Code = MIT, Artworks = © Josef Tieber)
+- [ ] Follows the project licensing guidelines (Code = Apache-2.0, Artworks = CC BY-NC-ND 4.0 / © Josef Tieber)

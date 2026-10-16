@@ -15,8 +15,8 @@
     "volt",
     "i18n"
   ],
-  "author": "Josef Tieber / niStee",
-  "license": "MIT",
+  "author": "Josef Tieber / niStee <52573120+niStee@users.noreply.github.com>",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@types/bun": "^1.3.14",
     "@types/node": "^26.2.0",
