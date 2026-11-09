@@ -5,3 +5,6 @@ dist/
 .cache/
 *.log
 *.mp4
+
+# Claude Code per-user approvals: the file can hold pasted credentials, never commit it
+.claude/settings.local.json
